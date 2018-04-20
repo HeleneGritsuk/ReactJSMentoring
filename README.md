@@ -1,18 +1,10 @@
 # ReactJSMentoring Program
-## Task 1 (Core concepts lecture)
+## Task 2 (Webpack lecture)
 
-Setting up the environment
+Create package.json file and install React, Redux, React-Redux, React-Router, Jest.
 
-Install and launch “blank” node.js application. You’ll need it in further development for implementing SSR. Commit this changes to repository.
+Install and configure webpack & babel to get build artifact by running npm command
 
-Create components in different ways, using:
+Set DEV and PROD build configuration. Use env variables, dev server, optimizations for PROD build
 
-* React.createElement
-
-* React.Component
-
-* React.PureComponent
-
-* functional components
-
-Note: To implement this task you could use React online sandbox, [optional] or start to configure basic project build from task 2. Share sandbox link with your mentor or commit to your repository
+Set up testing. You should have test command in your package.json file, which will run your future tests. Don’t use React boilerplate for this task.
