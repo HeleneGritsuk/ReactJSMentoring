@@ -1,27 +1,50 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 module.exports = {
-  entry: APP_DIR + '/index.jsx',
+  entry: __dirname + '/../src/client/app/index.jsx',
   output: {
-    path: BUILD_DIR,
+    path: __dirname + '/../public',
     filename: 'bundle.js'
   },
+  // resolve: {
+  //   extensions: [ '.js', '.jsx']
+  // },
   module : {
     rules : [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         loader : 'babel-loader'
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: __dirname + '/../src/client/index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ]
 
 };
