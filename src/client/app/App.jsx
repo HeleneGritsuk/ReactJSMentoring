@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 import Content  from './Content.jsx';
 import Footer  from './Footer.jsx';
 import Header  from './Header.jsx';
-import "./style.css";
-import "./images/awesome.png";
+import './style.css';
+import './images/awesome.png';
 
 
 class App extends React.Component {
@@ -19,4 +19,6 @@ class App extends React.Component {
   }
 }
 
-render(<App/>, document.getElementById('app'));
+// render(<App/>, document.getElementById('app'));
+
+export default App;

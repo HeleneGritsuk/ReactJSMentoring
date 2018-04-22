@@ -7,7 +7,7 @@ const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 module.exports = {
-  entry: __dirname + '/../src/client/app/index.jsx',
+  entry: __dirname + '/../src/client/app/index.js',
   output: {
     path: __dirname + '/../public',
     filename: 'bundle.js'
