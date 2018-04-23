@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "server": "node src/server/app.js",
-    "build": "webpack --mode production --config webpack/prod.config.js",
-    "start": "webpack-dev-server --mode development --config webpack/dev.config.js --hot --inline",
+    "build": "webpack --mode production --config webpack/webpack.config.js",
+    "start": "webpack-dev-server --mode development --config webpack/webpack.config.js --hot --inline",
     "test": "jest"
   },
   "jest": {
