@@ -18,6 +18,9 @@
       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
     }
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
