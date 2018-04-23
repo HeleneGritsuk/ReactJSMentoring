@@ -15,31 +15,39 @@ module.exports = {
   // resolve: {
   //   extensions: [ '.js', '.jsx']
   // },
-  module : {
-    rules : [
-      {
+  module: {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader : 'babel-loader'
+        loader: 'babel-loader'
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
+        use: [{
+          loader: "html-loader",
+          options: {
+            minimize: true
           }
-        ]
+        }]
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          { loader: 'postcss-loader' }
+        ]
       },
       {
         test: /\.(ttf|eot|svg|woff|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader",
         options: {
-            name: '[path][name].[ext]?[hash]'
+          name: '[path][name].[ext]?[hash]'
         }
       }
     ]
