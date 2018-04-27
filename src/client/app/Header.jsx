@@ -1,9 +1,7 @@
 import React from 'react';
 
-const Header = () => React.createElement(
-  'h1',
-  { className: 'title' },
-  'React core concepts task'
+const Header = () => (
+  <h1>netflixroulette</h1>
 );
 
 export default Header;

@@ -1,5 +1,13 @@
 import React from 'react';
-function Footer() {
-	return <footer> React mentoring program 2018 </footer>;
-}
+
+const Footer = () => (
+  <footer>
+    <div className="container">
+      <p>
+        React mentoring program 2018
+      </p>
+    </div>
+
+  </footer>
+);
 export default Footer;

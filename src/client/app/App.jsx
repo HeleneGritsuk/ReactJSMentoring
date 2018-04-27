@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import Content  from './Content.jsx';
 import Footer  from './Footer.jsx';
-import Header  from './Header.jsx';
+import SearchContainer  from './SearchContainer.jsx';
+import SearchResultsContainer  from './SearchResultsContainer.jsx';
 import './style.css';
 import './images/awesome.png';
 
@@ -10,9 +11,9 @@ import './images/awesome.png';
 class App extends React.Component {
   render () {
     return(
-      <div>
-        <Header/>
-        <Content/>
+      <div className='main-wrapper'>
+        <SearchContainer/>
+        <SearchResultsContainer/>
         <Footer/>
       </div>
     );
