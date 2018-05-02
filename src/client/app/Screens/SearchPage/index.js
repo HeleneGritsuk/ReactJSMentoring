@@ -7,13 +7,19 @@ import SearchResultsContainer  from './components/SearchResultsContainer.jsx';
 class SearchScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.sortByReleaseDate = this.sortByReleaseDate.bind(this);
+  }
+  sortByReleaseDate(){
+
+      throw new Error('I crashed!');
 
   }
+
   render () {
     return(
       <div className='main-wrapper'>
         <SearchContainer/>
-        <SearchResultsContainer/>
+        <SearchResultsContainer sortByReleaseDate = {this.sortByReleaseDate}/>
         <Footer/>
       </div>
     );

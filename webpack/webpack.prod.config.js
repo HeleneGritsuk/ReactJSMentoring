@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = function (env, options) {
-  const isProduction = options.mode === 'production';
-
   return {
 
     entry: __dirname + '/../src/client/app/index.js',
@@ -13,7 +11,7 @@ module.exports = function (env, options) {
       path: __dirname + '/../public',
       filename: 'bundle.js'
     },
-    devtool: isProduction ? 'source-map' : 'eval',
+    devtool: 'source-map',
     module: {
       rules: [{
           test: /\.(js|jsx)$/,
@@ -25,18 +23,18 @@ module.exports = function (env, options) {
           use: [{
             loader: "html-loader",
             options: {
-              minimize: isProduction ? true : false
+              minimize: true
             }
           }]
         },
         {
           test: /\.css$/,
           use: [
-            { loader: isProduction ? MiniCssExtractPlugin.loader : "style-loader" },
+            { loader: MiniCssExtractPlugin.loader },
             {
               loader: 'css-loader',
               options: {
-                minimize: isProduction ? true : false
+                minimize: true
               }
             },
             { loader: 'postcss-loader' }
