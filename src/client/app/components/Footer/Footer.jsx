@@ -4,7 +4,7 @@ const Footer = () => (
   <footer>
     <div className="container">
       <p>
-        React mentoring program 2018
+        netflixroulette
       </p>
     </div>
 

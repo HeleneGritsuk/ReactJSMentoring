@@ -1,20 +1,43 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Content  from './Content.jsx';
-import Footer  from './Footer.jsx';
-import SearchContainer  from './SearchContainer.jsx';
-import SearchResultsContainer  from './SearchResultsContainer.jsx';
+import SearchScreen from './components/SearchPage/SearchScreen.jsx';
+import FilmScreen from './components/FilmScreen/index.jsx';
 import './style.css';
-import './images/awesome.png';
-
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSearchPage: false,
+      showFilmPage: false
+    }
+    this.handleSearchPageClick = this.handleSearchPageClick.bind(this);
+    this.handleFilmPageClick = this.handleFilmPageClick.bind(this);
+
+  }
+  handleSearchPageClick() {
+    this.setState({
+      showSearchPage: true,
+      showFilmPage: false
+     });
+  }
+  handleFilmPageClick() {
+    this.setState({
+      showSearchPage: false,
+      showFilmPage: true
+     });
+  }
+  rend
   render () {
+
     return(
       <div className='main-wrapper'>
-        <SearchContainer/>
-        <SearchResultsContainer/>
-        <Footer/>
+        <div className = 'screensBtnWrapper'>
+          <button onClick = {this.handleSearchPageClick}>Show SearchPage view</button>
+          <button onClick = {this.handleFilmPageClick}>Show FilmPage view</button>
+        </div>
+        {this.state.showSearchPage ? (<SearchScreen/>) : null}
+        {this.state.showFilmPage ? (<FilmScreen goToHomePage = {this.handleSearchPageClick}/>) : null}
       </div>
     );
   }

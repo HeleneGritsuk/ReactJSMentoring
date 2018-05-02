@@ -1,15 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Content  from './Content.jsx';
-import Footer  from './Footer.jsx';
-import SearchHeader  from './SearchHeader.jsx';
-import ResultsList  from './ResultsList.jsx';
+import Footer  from '../Footer/Footer.jsx';
+import ProposedListHeader  from './ProposedListHeader.jsx';
+import ResultsList  from '../ResultsList/ResultsList.jsx';
 
-class SearchResultsContainer extends React.Component {
+class ProposedFilmsContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultsNumber: 7,
+      genre: 'oscar-winning movies',
       films: [
         {
           name: 'Kill Bill',
@@ -32,7 +31,7 @@ class SearchResultsContainer extends React.Component {
     return(
       <section className="searchResults">
         <div className="container">
-          <SearchHeader resultsNumber={this.state.resultsNumber}/>
+          <ProposedListHeader genre={this.state.genre}/>
           <ResultsList films={this.state.films}/>
         </div>
       </section>
@@ -40,4 +39,4 @@ class SearchResultsContainer extends React.Component {
   }
 }
 
-export default SearchResultsContainer;
+export default ProposedFilmsContainer;

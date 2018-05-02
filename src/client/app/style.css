@@ -1,50 +1,66 @@
-
 html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
 
-    margin: 0;
-    height: 100%;
-    width: 100%;
+header {
+  display: flex;
+  align-items: center;
+}
+header h1 {
+  color: #ff8178;
+}
+footer {
+  background: #464547;
+color: #ff8178;
 }
 .main {
-    width: 100%;
-    height: 100%;
-
+  width: 100%;
+  height: 100%;
 }
+
 .main-wrapper {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
-.container {
 
+.container {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .searchResults {
-    flex-grow: 1;
+  flex-grow: 1;
 }
+
 .searchResults__header {
-
-    display: flex;
-
+  display: flex;
 }
+
 .searchResults__sorting {
-  margin-left: auto;;
+  margin-left: auto;
+  ;
 }
+
 .searchForm__footer {
-      display: flex;
-      margin-bottom: 30px;
-      border-bottom: 1px solid gray;
-      padding-bottom: 20px;
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
 }
+
 .searchForm__searchBtn {
   margin-left: auto;
 }
+
 .searchResults__content {
   display: flex;
+  padding: 40px 40px;
 }
+
 .searchResults__message {
   position: absolute;
   top: 50%;
@@ -52,12 +68,36 @@ html, body {
   font-weight: bold;
   font-size: 20px;
 }
+
 .filmItem {
   margin: 0 20px 20px;
 }
+
 .filmItem__info {
   display: flex;
 }
+
 .filmItem__year {
   margin-left: auto;
+}
+
+.screensBtnWrapper {
+  text-align: center;
+}
+
+.homeBtn {
+  margin-left: auto;
+}
+
+.filmInfo {
+  display: flex;
+      padding: 0 40px 50px;
+}
+
+.filmInfo__text {
+  margin-left: 30px;
+}
+.searchResults__header {
+  padding: 20px 10px;
+  background: #d3d3d36e;
 }
