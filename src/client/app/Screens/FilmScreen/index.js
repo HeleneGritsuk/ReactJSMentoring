@@ -1,12 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Header  from '../Header/Header.jsx';
-import FilmInfo  from './FilmInfo.jsx';
+import Footer  from '../../components/Footer';
+import ProposedFilmsContainer from './components/ProposedFilmsContainer.jsx';
+import FilmInfoContainer from './components/FilmInfoContainer.jsx';
 
-class FilmInfoContainer extends React.Component {
+class FilmScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      genre: 'oscar-winning movies',
       filmImg: 'http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg',
       filmTitle: 'Kill Bill',
       genre: 'oscar-winning movies',
@@ -29,19 +31,19 @@ class FilmInfoContainer extends React.Component {
           id: 2
         }
       ]
+
     }
   }
+
   render () {
     return(
-      <div className="search">
-        <div className="container">
-          <Header isFilmScreen = {true} goToHomePage = {this.props.goToHomePage}/>
-          <FilmInfo filmInfo = {this.state}></FilmInfo>
-        </div>
-
+      <div className='main-wrapper'>
+        <FilmInfoContainer goToHomePage = {this.props.goToHomePage} filmInfo = {this.state}/>
+        <ProposedFilmsContainer genre = {this.state.genre} films={this.state.films}/>
+        <Footer/>
       </div>
     );
   }
 }
 
-export default FilmInfoContainer;
+export default FilmScreen;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Header  from '../Header/Header.jsx';
+import Header  from '../../../components/Header';
 import SearchForm from './SearchForm.jsx';
 
 class SearchContainer extends React.Component {

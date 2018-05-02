@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Footer  from '../Footer/Footer.jsx';
-import SearchContainer  from './SearchContainer.jsx';
-import SearchResultsContainer  from './SearchResultsContainer.jsx';
+import Footer  from '../../components/Footer';
+import SearchContainer  from './components/SearchContainer.jsx';
+import SearchResultsContainer  from './components/SearchResultsContainer.jsx';
 
 class SearchScreen extends React.Component {
   constructor(props) {

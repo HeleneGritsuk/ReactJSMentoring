@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import SearchScreen from './components/SearchPage/SearchScreen.jsx';
-import FilmScreen from './components/FilmScreen/index.jsx';
+import SearchScreen from './Screens/SearchPage';
+import FilmScreen from './Screens/FilmScreen';
 import './style.css';
 
 class App extends React.Component {
