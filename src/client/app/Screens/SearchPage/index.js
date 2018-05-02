@@ -7,6 +7,9 @@ import SearchResultsContainer  from './components/SearchResultsContainer.jsx';
 class SearchScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sortByTitle: true
+    }
     this.sortByReleaseDate = this.sortByReleaseDate.bind(this);
   }
   sortByReleaseDate(){
@@ -18,7 +21,7 @@ class SearchScreen extends React.Component {
   render () {
     return(
       <div className='main-wrapper'>
-        <SearchContainer/>
+        <SearchContainer sortByTitle = {this.state.sortByTitle}/>
         <SearchResultsContainer sortByReleaseDate = {this.sortByReleaseDate}/>
         <Footer/>
       </div>

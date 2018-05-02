@@ -12,7 +12,7 @@ class SearchContainer extends React.Component {
       <div className="search">
         <div className="container">
           <Header/>
-          <SearchForm/>
+          <SearchForm sortByTitle = {this.props.sortByTitle}/>
         </div>
 
       </div>
