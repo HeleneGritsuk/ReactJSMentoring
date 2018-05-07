@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer is rendered normally 1`] = `
+<footer>
+  <div
+    className="container"
+  >
+    <p>
+      netflixroulette
+    </p>
+  </div>
+</footer>
+`;

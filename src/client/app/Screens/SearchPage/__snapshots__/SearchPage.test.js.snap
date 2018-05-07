@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchScreen should render index page correctly 1`] = `
+<div
+  className="main-wrapper searchPage"
+>
+  <div
+    className="search"
+  >
+    <div
+      className="container"
+    >
+      <header>
+        <h1>
+          netflixroulette
+        </h1>
+      </header>
+      <div
+        className="searchForm"
+      >
+        <h3>
+          Find your movie
+        </h3>
+        <input
+          className="searchForm__input"
+          type="text"
+        />
+        <div
+          className="searchForm__footer"
+        >
+          <div
+            className="searchForm__searchCriteria"
+          >
+            <span>
+              Search by
+            </span>
+            <button
+              className="active searchForm__searchCriteriaBtns"
+            >
+              Title
+            </button>
+            <button
+              className="searchForm__searchCriteriaBtns"
+            >
+              Genre
+            </button>
+          </div>
+          <button
+            className="searchForm__searchBtn"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    className="searchResults"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="searchResults__header"
+      >
+        <div
+          className="searchResults__foundNumber"
+        >
+          7
+           movies found
+        </div>
+        <div
+          className="searchResults__sorting"
+        >
+          Sort by
+          <button
+            onClick={[Function]}
+          >
+             release date
+          </button>
+          <button
+            onClick={[Function]}
+          >
+             rating
+          </button>
+        </div>
+      </div>
+      <div
+        className="searchResults__content"
+      >
+        <div
+          className="filmItem"
+        >
+          <img
+            src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+          />
+          <div
+            className="filmItem__info"
+          >
+            <div
+              className="filmItem__title"
+            >
+              Kill Bill
+            </div>
+            <div
+              className="filmItem__year"
+            >
+              2014
+            </div>
+          </div>
+          <div
+            className="filmItem__genre"
+          >
+            drama
+          </div>
+        </div>
+        <div
+          className="filmItem"
+        >
+          <img
+            src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+          />
+          <div
+            className="filmItem__info"
+          >
+            <div
+              className="filmItem__title"
+            >
+              Kill Bill2
+            </div>
+            <div
+              className="filmItem__year"
+            >
+              2017
+            </div>
+          </div>
+          <div
+            className="filmItem__genre"
+          >
+            adventure
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div
+      className="container"
+    >
+      <p>
+        netflixroulette
+      </p>
+    </div>
+  </footer>
+</div>
+`;
