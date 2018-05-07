@@ -17,7 +17,7 @@ class SearchResultsContainer extends React.Component {
     return(
       <section className="searchResults">
         <div className="container">
-          <SearchResultsHeader resultsNumber={this.state.resultsNumber} sortByReleaseDate = {this.props.sortByReleaseDate}/>
+          <SearchResultsHeader resultsNumber={this.state.resultsNumber} sortByReleaseDate = {this.props.sortByReleaseDate} sortByRaiting = {this.props.sortByRaiting}/>
           <ResultsList films={this.state.films}/>
         </div>
       </section>

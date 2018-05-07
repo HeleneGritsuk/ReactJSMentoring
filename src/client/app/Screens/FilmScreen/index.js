@@ -22,7 +22,7 @@ class FilmScreen extends React.Component {
 
   render () {
     return(
-      <div className='main-wrapper'>
+      <div className='main-wrapper filmPage'>
         <FilmInfoContainer goToHomePage = {this.props.goToHomePage} filmInfo = {this.state}/>
         <ProposedFilmsContainer genre = {this.state.genre} films={this.state.films}/>
         <Footer/>
