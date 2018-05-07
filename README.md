@@ -1,10 +1,17 @@
 # ReactJSMentoring Program
-## Task 2 (Webpack lecture)
+## Task 4 (Testing lecture)
 
-Create package.json file and install React, Redux, React-Redux, React-Router, Jest.
+Coverage > 60% Write tests using enzyme and jest
 
-Install and configure webpack & babel to get build artifact by running npm command
+Use snapshot testing
 
-Set DEV and PROD build configuration. Use env variables, dev server, optimizations for PROD build
+Use coverage tool
 
-Set up testing. You should have test command in your package.json file, which will run your future tests. Don’t use React boilerplate for this task.
+Write at least one e2e test using library from the list: Cypress, CasperJS, Protractor, Nightwatch, Webdriver
+
+Evaluation criteria:
+
+2 -> Coverage >60%
+3 -> Use snapshot testing
+4 -> Coverage > 80%. Functional testing with enzyme and jest
+5 -> Write at least one e2e test
