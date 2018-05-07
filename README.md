@@ -11,7 +11,6 @@ Write at least one e2e test using library from the list: Cypress, CasperJS, Prot
 
 Evaluation criteria:
 
-2 -> Coverage >60%
-3 -> Use snapshot testing
-4 -> Coverage > 80%. Functional testing with enzyme and jest
-5 -> Write at least one e2e test
+2 | 3 | 4 | 5 
+--- | --- | --- | --- 
+Coverage >60% | Use snapshot testing | Coverage > 80%. Functional testing with enzyme and jest | Write at least one e2e test 
