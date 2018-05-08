@@ -10,7 +10,7 @@ class FilmInfoContainer extends React.Component {
   }
   render () {
     return(
-      <div className="search">
+      <div className="pageHeader">
         <div className="container">
           <Header isFilmScreen = {true} goToHomePage = {this.props.goToHomePage}/>
           <FilmInfo filmInfo = {this.props.filmInfo}></FilmInfo>

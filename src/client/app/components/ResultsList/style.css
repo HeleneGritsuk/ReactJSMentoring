@@ -1,0 +1,24 @@
+.searchResults__content {
+  display: flex;
+  padding: 40px 40px;
+}
+
+.searchResults__message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.filmItem {
+  margin: 0 20px 20px;
+}
+
+.filmItem__info {
+  display: flex;
+}
+
+.filmItem__year {
+  margin-left: auto;
+}

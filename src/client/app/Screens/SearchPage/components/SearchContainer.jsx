@@ -9,7 +9,7 @@ class SearchContainer extends React.Component {
   }
   render () {
     return(
-      <div className="search">
+      <div className="pageHeader">
         <div className="container">
           <Header/>
           <SearchForm sortByTitle = {this.props.sortByTitle}/>

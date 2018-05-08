@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should be rendered correctly 1`] = `
+<div
+  className="main-wrapper"
+>
+  <div
+    className="screensBtnWrapper"
+  >
+    <button
+      className="SearchScreenBtn"
+      onClick={[Function]}
+    >
+      Show SearchPage view
+    </button>
+    <button
+      className="FilmScreenBtn"
+      onClick={[Function]}
+    >
+      Show FilmPage view
+    </button>
+  </div>
+</div>
+`;

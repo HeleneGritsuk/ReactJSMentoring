@@ -14,7 +14,6 @@ class App extends React.Component {
     }
     this.handleSearchPageClick = this.handleSearchPageClick.bind(this);
     this.handleFilmPageClick = this.handleFilmPageClick.bind(this);
-    this.throwError = this.throwError.bind(this);
   }
   handleSearchPageClick() {
     this.setState({
@@ -28,23 +27,17 @@ class App extends React.Component {
       showFilmPage: true
      });
   }
-  throwError() {
-    throw new Error('I crashed!');
-  }
 
   render () {
     return(
-      <ErrorBoundary>
         <div className='main-wrapper'>
           <div className = 'screensBtnWrapper'>
-            <button onClick = {this.handleSearchPageClick}>Show SearchPage view</button>
-            <button onClick = {this.handleFilmPageClick}>Show FilmPage view</button>
-            <button onClick = {this.throwError}> Throw Error</button>
+            <button className='SearchScreenBtn' onClick = {this.handleSearchPageClick}>Show SearchPage view</button>
+            <button className='FilmScreenBtn' onClick = {this.handleFilmPageClick}>Show FilmPage view</button>
           </div>
           {this.state.showSearchPage ? (<SearchScreen/>) : null}
           {this.state.showFilmPage ? (<FilmScreen goToHomePage = {this.handleSearchPageClick}/>) : null}
         </div>
-      </ErrorBoundary>
     );
   }
 }

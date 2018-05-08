@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultList should render list of films 1`] = `
+<div
+  className="searchResults__content"
+>
+  <div
+    className="filmItem"
+  >
+    <img
+      src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+    />
+    <div
+      className="filmItem__info"
+    >
+      <div
+        className="filmItem__title"
+      >
+        Kill Bill
+      </div>
+      <div
+        className="filmItem__year"
+      >
+        2014
+      </div>
+    </div>
+    <div
+      className="filmItem__genre"
+    >
+      drama
+    </div>
+  </div>
+  <div
+    className="filmItem"
+  >
+    <img
+      src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+    />
+    <div
+      className="filmItem__info"
+    >
+      <div
+        className="filmItem__title"
+      >
+        Kill Bill2
+      </div>
+      <div
+        className="filmItem__year"
+      >
+        2017
+      </div>
+    </div>
+    <div
+      className="filmItem__genre"
+    >
+      adventure
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmScreen should render film view correctly 1`] = `
+<div
+  className="main-wrapper filmPage"
+>
+  <div
+    className="search"
+  >
+    <div
+      className="container"
+    >
+      <header>
+        <h1>
+          netflixroulette
+        </h1>
+        <a
+          className="homeBtn"
+          href="#"
+          onClick={undefined}
+        >
+          Search
+        </a>
+      </header>
+      <div
+        className="filmInfo"
+      >
+        <img
+          src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+        />
+        <div
+          className="filmInfo__text"
+        >
+          <h2>
+            Kill Bill
+          </h2>
+          <div
+            className="filmInfo__genre"
+          >
+            oscar-winning movies
+          </div>
+          <div>
+            <div>
+              1994
+            </div>
+            <div>
+              54
+               min
+            </div>
+          </div>
+          <p>
+            Kill Bill: Volume 1 is a 2003 American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a team of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader Bill (David Carradine) after they try to kill her and her unborn child. Her journey takes her to Japan, where she battles the Tokyo yakuza.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section
+    className="searchResults"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="searchResults__header"
+      >
+        Films by 
+        oscar-winning movies
+      </div>
+      <div
+        className="searchResults__content"
+      >
+        <div
+          className="filmItem"
+        >
+          <img
+            src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+          />
+          <div
+            className="filmItem__info"
+          >
+            <div
+              className="filmItem__title"
+            >
+              Kill Bill
+            </div>
+            <div
+              className="filmItem__year"
+            >
+              2014
+            </div>
+          </div>
+          <div
+            className="filmItem__genre"
+          >
+            drama
+          </div>
+        </div>
+        <div
+          className="filmItem"
+        >
+          <img
+            src="http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg"
+          />
+          <div
+            className="filmItem__info"
+          >
+            <div
+              className="filmItem__title"
+            >
+              Kill Bill2
+            </div>
+            <div
+              className="filmItem__year"
+            >
+              2017
+            </div>
+          </div>
+          <div
+            className="filmItem__genre"
+          >
+            adventure
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div
+      className="container"
+    >
+      <p>
+        netflixroulette
+      </p>
+    </div>
+  </footer>
+</div>
+`;

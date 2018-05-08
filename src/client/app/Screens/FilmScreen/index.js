@@ -4,12 +4,12 @@ import Footer  from '../../components/Footer';
 import ProposedFilmsContainer from './components/ProposedFilmsContainer.jsx';
 import FilmInfoContainer from './components/FilmInfoContainer.jsx';
 import { filmsMockArray } from '../../mocks';
+import './style.css';
 
 class FilmScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      genre: 'oscar-winning movies',
       filmImg: 'http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg',
       filmTitle: 'Kill Bill',
       genre: 'oscar-winning movies',
@@ -22,7 +22,7 @@ class FilmScreen extends React.Component {
 
   render () {
     return(
-      <div className='main-wrapper'>
+      <div className='main-wrapper filmPage'>
         <FilmInfoContainer goToHomePage = {this.props.goToHomePage} filmInfo = {this.state}/>
         <ProposedFilmsContainer genre = {this.state.genre} films={this.state.films}/>
         <Footer/>
