@@ -4,6 +4,7 @@ import Footer  from '../../components/Footer';
 import ProposedFilmsContainer from './components/ProposedFilmsContainer.jsx';
 import FilmInfoContainer from './components/FilmInfoContainer.jsx';
 import { filmsMockArray } from '../../mocks';
+import './style.css';
 
 class FilmScreen extends React.Component {
   constructor(props) {

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Footer  from '../../components/Footer';
 import SearchContainer  from './components/SearchContainer.jsx';
 import SearchResultsContainer  from './components/SearchResultsContainer.jsx';
+import './style.css';
 
 class SearchScreen extends React.Component {
   constructor(props) {

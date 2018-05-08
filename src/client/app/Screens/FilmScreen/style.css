@@ -1,0 +1,18 @@
+.homeBtn {
+  margin-left: auto;
+  margin-left: auto;
+  background: white;
+  color: #ff8178;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.filmInfo {
+  display: flex;
+  padding: 0 40px 50px;
+}
+
+.filmInfo__text {
+  margin-left: 30px;
+}
