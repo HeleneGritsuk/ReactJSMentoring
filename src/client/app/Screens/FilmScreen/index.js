@@ -10,7 +10,6 @@ class FilmScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      genre: 'oscar-winning movies',
       filmImg: 'http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg',
       filmTitle: 'Kill Bill',
       genre: 'oscar-winning movies',
