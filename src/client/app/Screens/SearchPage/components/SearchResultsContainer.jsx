@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Footer  from '../../../components/Footer';
-import SearchResultsHeader  from './SearchResultsHeader.jsx';
-import ResultsList  from '../../../components/ResultsList';
+import Footer from '../../../components/Footer';
+import SearchResultsHeader from './SearchResultsHeader.jsx';
+import ResultsList from '../../../components/ResultsList';
 import { filmsMockArray } from '../../../mocks';
 
 class SearchResultsContainer extends React.Component {
@@ -10,15 +10,15 @@ class SearchResultsContainer extends React.Component {
     super(props);
     this.state = {
       resultsNumber: 7,
-      films: filmsMockArray
-    }
+      films: filmsMockArray,
+    };
   }
-  render () {
-    return(
+  render() {
+    return (
       <section className="searchResults">
         <div className="container">
-          <SearchResultsHeader resultsNumber={this.state.resultsNumber} sortByReleaseDate = {this.props.sortByReleaseDate} sortByRaiting = {this.props.sortByRaiting}/>
-          <ResultsList films={this.state.films}/>
+          <SearchResultsHeader resultsNumber={this.state.resultsNumber} />
+          <ResultsList films={this.state.films} />
         </div>
       </section>
     );

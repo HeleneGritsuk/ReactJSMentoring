@@ -1,35 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Footer  from '../../components/Footer';
-import SearchContainer  from './components/SearchContainer.jsx';
-import SearchResultsContainer  from './components/SearchResultsContainer.jsx';
+import Footer from '../../components/Footer';
+import SearchPageHeader from './components/SearchPageHeader.jsx';
+import SearchResultsContainer from './components/SearchResultsContainer.jsx';
+import { connect } from 'react-redux';
+import { setVisibilityFilter } from '../../redux/actions';
 import './style.css';
 
-class SearchScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sortByTitle: true
-    }
-    this.sortByReleaseDate = this.sortByReleaseDate.bind(this);
-    this.sortByRaiting = this.sortByRaiting.bind(this);
-  }
-  sortByReleaseDate(){
-      console.log('sortByReleaseDate');
-  }
-  sortByRaiting(){
-      console.log('sortByRating');
-  }
 
-  render () {
-    return(
-      <div className='main-wrapper searchPage'>
-        <SearchContainer sortByTitle = {this.state.sortByTitle}/>
-        <SearchResultsContainer sortByReleaseDate = {this.sortByReleaseDate} sortByRaiting = {this.sortByRaiting}/>
-        <Footer/>
-      </div>
-    );
-  }
-}
+const mapStateToProps = state => ({
+  visibilityFilter: state.visibilityFilter,
+});
 
-export default SearchScreen;
+const mapDispatchToProps = (dispatch) => ({
+  onClick: (searchCriteria) => dispatch(setVisibilityFilter(searchCriteria)),
+});
+
+const SearchScreen = ({ visibilityFilter, onClick }) => (
+  <div className="main-wrapper searchPage">
+    <SearchPageHeader visibilityFilter = {visibilityFilter} onClick={onClick} />
+    <SearchResultsContainer />
+    <Footer />
+  </div>
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
