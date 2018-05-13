@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SearchButton = ({
-  filter, visibilityFilter, children, onClick,
+  filter, searchFilter, children, onClick,
 }) => (
-  <button onClick={onClick.bind(null, filter)} className={filter === visibilityFilter ? 'active searchForm__searchCriteriaBtns' : 'searchForm__searchCriteriaBtns'}>{children}</button>
+  <button onClick={onClick.bind(null, filter)} className={filter === searchFilter ? 'active searchForm__searchCriteriaBtns' : 'searchForm__searchCriteriaBtns'}>{children}</button>
 );
 export default SearchButton;

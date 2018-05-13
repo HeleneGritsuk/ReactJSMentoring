@@ -4,21 +4,21 @@ import Footer from '../../components/Footer';
 import SearchPageHeader from './components/SearchPageHeader.jsx';
 import SearchResultsContainer from './components/SearchResultsContainer.jsx';
 import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../../redux/actions';
+import { setSearchFilter } from '../../redux/actions';
 import './style.css';
 
 
 const mapStateToProps = state => ({
-  visibilityFilter: state.visibilityFilter,
+  searchFilter: state.searchFilter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onClick: (searchCriteria) => dispatch(setVisibilityFilter(searchCriteria)),
+  onClick: (searchCriteria) => dispatch(setSearchFilter(searchCriteria)),
 });
 
-const SearchScreen = ({ visibilityFilter, onClick }) => (
+const SearchScreen = ({ searchFilter, onClick }) => (
   <div className="main-wrapper searchPage">
-    <SearchPageHeader visibilityFilter = {visibilityFilter} onClick={onClick} />
+    <SearchPageHeader searchFilter = {searchFilter} onClick={onClick} />
     <SearchResultsContainer />
     <Footer />
   </div>

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import visibilityFilter from './visibilityFilter';
+import searchFilter from './searchFilter';
 
 const rootReducer = combineReducers({
-  visibilityFilter,
+  searchFilter,
 });
 
 export default rootReducer;
