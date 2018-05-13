@@ -14,10 +14,11 @@ class SearchResultsContainer extends React.Component {
     };
   }
   render() {
+    const { sortType, sortBtnClick } = this.props;
     return (
       <section className="searchResults">
         <div className="container">
-          <SearchResultsHeader resultsNumber={this.state.resultsNumber} />
+          <SearchResultsHeader resultsNumber={this.state.resultsNumber} sortType={sortType} sortBtnClick={sortBtnClick} />
           <ResultsList films={this.state.films} />
         </div>
       </section>

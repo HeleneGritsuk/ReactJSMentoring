@@ -58,11 +58,14 @@
   margin-left: auto;
 }
 
-.searchResults__sorting button {
+.searchResults__sortBtn{
   background: none;
   border: none;
   font-weight: bold;
   font-size: 16px;
   color: #484747;
   cursor: pointer;
+}
+.searchResults__sortBtn.active{
+   color: #ce5a35;
 }
