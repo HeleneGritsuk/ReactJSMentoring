@@ -9,8 +9,8 @@ const SearchResultsHeader = ({ resultsNumber, sortBtnClick, sortType }) => (
       <div className="searchResults__header-content container">
         <div className="searchResults__foundNumber">{resultsNumber} movies found</div>
         <div className="searchResults__sorting">Sort by
-          <SortButton sort={SortTypes.SORT_BY_RELEASE} sortType={sortType} sortBtnClick={sortBtnClick}>release date</SortButton>
-          <SortButton sort={SortTypes.SORT_BY_RATING} sortType={sortType} sortBtnClick={sortBtnClick}>rating</SortButton>
+          <SortButton sort='release_date' sortType={sortType} sortBtnClick={sortBtnClick}>release date</SortButton>
+          <SortButton sort='vote_average' sortType={sortType} sortBtnClick={sortBtnClick}>rating</SortButton>
         </div>
       </div>
 

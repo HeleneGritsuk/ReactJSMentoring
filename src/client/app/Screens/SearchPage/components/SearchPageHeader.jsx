@@ -5,7 +5,7 @@ import SearchButton from './SearchButton.jsx';
 // import SearchForm from './SearchForm.jsx';
 
 
-const SearchPageHeader = ({ searchFilter, onClick, getAllFilms }) => {
+const SearchPageHeader = ({ searchFilter, setSearchFilter, getAllFilms, sortType }) => {
   let textInput;
   return (
     <div className="pageHeader">
@@ -17,10 +17,10 @@ const SearchPageHeader = ({ searchFilter, onClick, getAllFilms }) => {
           <div className="searchForm__footer">
             <div className="searchForm__searchCriteria">
               <span>Search by</span>
-              <SearchButton onClick={onClick} filter='title' searchFilter={searchFilter}>Title</SearchButton>
-              <SearchButton onClick={onClick} filter='genres' searchFilter={searchFilter}>Genre</SearchButton>
+              <SearchButton setSearchFilter={setSearchFilter} filter='title' searchFilter={searchFilter}>Title</SearchButton>
+              <SearchButton setSearchFilter={setSearchFilter} filter='genres' searchFilter={searchFilter}>Genre</SearchButton>
             </div>
-            <button className="searchForm__searchBtn" onClick={() => { getAllFilms(textInput.value, searchFilter); }}>Search</button>
+            <button className="searchForm__searchBtn" onClick={() => { getAllFilms(textInput.value, searchFilter, sortType); }}>Search</button>
           </div>
         </div>
       </div>

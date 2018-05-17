@@ -39,18 +39,18 @@ const getFilmsError = () => ({
   type: 'GET_FILMS_ERROR',
 });
 
-const makeUserRequest = (method, searchTerm, searchFilter, api = 'http://react-cdp-api.herokuapp.com/movies') =>
+const makeUserRequest = (method, searchTerm, searchFilter, sortBy, api = 'http://react-cdp-api.herokuapp.com/movies') =>
 // returns a Promise
   axios({
     method,
-    url: `${api}?search=${searchTerm}&searchBy=${searchFilter}&sortBy=release_date&sortOrder=desc`,
+    url: `${api}?search=${searchTerm}&searchBy=${searchFilter}&sortBy=${sortBy}&sortOrder=desc`,
   });
 
 
-export const getAllFilms = (searchTerm, searchFilter) => (dispatch) => {
+export const getAllFilms = (searchTerm, searchFilter, sortBy) => (dispatch) => {
   dispatch(beginGetFilms());
 
-  return makeUserRequest('get', searchTerm, searchFilter)
+  return makeUserRequest('get', searchTerm, searchFilter, sortBy)
     .then((response) => {
       if (response.status == 200) {
         dispatch(getFilmsSuccess(response.data));
