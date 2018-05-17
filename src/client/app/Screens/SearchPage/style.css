@@ -2,9 +2,7 @@
   flex-grow: 1;
 }
 
-.searchResults__header {
-  display: flex;
-}
+
 
 .searchForm__footer {
   display: flex;
@@ -20,6 +18,10 @@
 .searchResults__header {
   padding: 20px 10px;
   background: #d3d3d36e;
+}
+
+.searchResults__header .container {
+  display: flex;
 }
 
 .searchForm__searchCriteriaBtns {

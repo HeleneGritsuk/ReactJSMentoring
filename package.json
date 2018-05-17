@@ -27,6 +27,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-eslint": "^8.2.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
