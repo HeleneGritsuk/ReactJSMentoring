@@ -1,7 +1,7 @@
 import { SortTypes } from '../actions';
 
 const sortType = (
-  state =  SortTypes.SORT_BY_RELEASE,
+  state =  'release_date',
   action,
 ) => {
   switch (action.type) {

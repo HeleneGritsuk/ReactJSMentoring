@@ -17,10 +17,10 @@ const SearchPageHeader = ({ searchFilter, onClick, getAllFilms }) => {
           <div className="searchForm__footer">
             <div className="searchForm__searchCriteria">
               <span>Search by</span>
-              <SearchButton onClick={onClick} filter={SearchFilters.SEARCH_BY_TITLE} searchFilter={searchFilter}>Title</SearchButton>
-              <SearchButton onClick={onClick} filter={SearchFilters.SEARCH_BY_GENRE} searchFilter={searchFilter}>Genre</SearchButton>
+              <SearchButton onClick={onClick} filter='title' searchFilter={searchFilter}>Title</SearchButton>
+              <SearchButton onClick={onClick} filter='genres' searchFilter={searchFilter}>Genre</SearchButton>
             </div>
-            <button className="searchForm__searchBtn" onClick={() => { getAllFilms(textInput.value); }}>Search</button>
+            <button className="searchForm__searchBtn" onClick={() => { getAllFilms(textInput.value, searchFilter); }}>Search</button>
           </div>
         </div>
       </div>

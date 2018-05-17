@@ -1,7 +1,7 @@
 import { SearchFilters } from '../actions';
 
 const searchFilter = (
-  state =  SearchFilters.SEARCH_BY_TITLE,
+  state =  'title',
   action,
 ) => {
   switch (action.type) {

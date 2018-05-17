@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onClick: (searchCriteria) => dispatch(setSearchFilter(searchCriteria)),
   sortBtnClick: (sortType) => dispatch(setSortingType(sortType)),
-  getAllFilms: (searchQuery) => dispatch(getAllFilms(searchQuery))
+  getAllFilms: (searchQuery, searchBy) => dispatch(getAllFilms(searchQuery, searchBy))
 });
 
 const SearchScreen = ({ searchFilter, onClick, sortType, sortBtnClick, getAllFilms, films }) => (
