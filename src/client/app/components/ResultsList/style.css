@@ -16,8 +16,12 @@
 .filmItem {
   margin: 0 1.1% 35px;
   width: 31%;
+  text-decoration: none;
+  color: #000;
 }
-
+.filmItem:hover .filmItem__img {
+  box-shadow: 7px 8px 11px 1px rgba(0,0,0,0.16);
+}
 .filmItem__info {
   display: flex;
   margin-top: 10px;

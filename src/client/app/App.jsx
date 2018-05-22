@@ -10,34 +10,34 @@ class App extends React.Component {
     super(props);
     this.state = {
       showSearchPage: false,
-      showFilmPage: false
-    }
+      showFilmPage: false,
+    };
     this.handleSearchPageClick = this.handleSearchPageClick.bind(this);
     this.handleFilmPageClick = this.handleFilmPageClick.bind(this);
   }
   handleSearchPageClick() {
     this.setState({
       showSearchPage: true,
-      showFilmPage: false
-     });
+      showFilmPage: false,
+    });
   }
   handleFilmPageClick() {
     this.setState({
       showSearchPage: false,
-      showFilmPage: true
-     });
+      showFilmPage: true,
+    });
   }
 
-  render () {
-    return(
-        <div className='main-wrapper'>
-          <div className = 'screensBtnWrapper'>
-            <button className='SearchScreenBtn' onClick = {this.handleSearchPageClick}>Show SearchPage view</button>
-            <button className='FilmScreenBtn' onClick = {this.handleFilmPageClick}>Show FilmPage view</button>
-          </div>
-          {this.state.showSearchPage ? (<SearchScreen/>) : null}
-          {this.state.showFilmPage ? (<FilmScreen goToHomePage = {this.handleSearchPageClick}/>) : null}
+  render() {
+    return (
+      <div className="main-wrapper">
+        <div className="screensBtnWrapper">
+          <button className="SearchScreenBtn" onClick={this.handleSearchPageClick}>Show SearchPage view</button>
+          <button className="FilmScreenBtn" onClick={this.handleFilmPageClick}>Show FilmPage view</button>
         </div>
+        {this.state.showSearchPage ? (<SearchScreen />) : null}
+        {this.state.showFilmPage ? (<FilmScreen goToHomePage={this.handleSearchPageClick} />) : null}
+      </div>
     );
   }
 }

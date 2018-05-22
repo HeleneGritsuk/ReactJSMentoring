@@ -7,7 +7,7 @@ function ResultsList({ films }) {
       <div className="searchResults__content container">
         {
             films.map(film =>
-            (<div className="filmItem" key={film.id}>
+            (<a className="filmItem" key={film.id} href="#">
               <img className="filmItem__img" src={film.imgSrc} />
               <div className="filmItem__info">
                 <div className="filmItem__title">
@@ -20,7 +20,7 @@ function ResultsList({ films }) {
               <div className="filmItem__genre">
                 {film.genre.join(' & ')}
               </div>
-            </div>))}
+            </a>))}
       </div>
     );
   }
