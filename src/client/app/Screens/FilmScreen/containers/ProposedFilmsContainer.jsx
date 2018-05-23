@@ -1,16 +1,14 @@
 import { connect } from 'react-redux';
-import SearchResults from '../components/SearchResults.jsx';
 import { setSortingType, getFilmInfo } from '../../../redux/actions';
+import ProposedFilms from '../components/ProposedFilms.jsx';
 
 const mapStateToProps = state => ({
-  sortType: state.sortType,
-  films: state.films
+  films: state.filmInfo.relatedFilms,
+  genre: state.filmInfo.genre
 });
 
 const mapDispatchToProps = dispatch => ({
-  sortBtnClick: (sortType) => dispatch(setSortingType(sortType)),
   getFilmInfo: (id, genre) => dispatch(getFilmInfo(id, genre))
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
+export default connect(mapStateToProps, mapDispatchToProps)(ProposedFilms);

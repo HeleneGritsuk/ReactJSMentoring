@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
 
-function ResultsList({ films }) {
+function ResultsList({ films, getFilmInfo }) {
   if (films.length) {
     return (
       <div className="searchResults__content container">
         {
             films.map(film =>
-            (<a className="filmItem" key={film.id} href="#">
+            (<a className="filmItem" key={film.id} onClick = { getFilmInfo.bind(null, film.id, film.genre) }>
               <img className="filmItem__img" src={film.imgSrc} />
               <div className="filmItem__info">
                 <div className="filmItem__title">
