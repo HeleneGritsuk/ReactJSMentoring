@@ -4,11 +4,11 @@ import ProposedFilms from '../components/ProposedFilms.jsx';
 
 const mapStateToProps = state => ({
   films: state.filmInfo.relatedFilms,
-  genre: state.filmInfo.genre
+  genres: state.filmInfo.genres
 });
 
 const mapDispatchToProps = dispatch => ({
-  getFilmInfo: (id, genre) => dispatch(getFilmInfo(id, genre))
+  getFilmInfo: (id, genres) => dispatch(getFilmInfo(id, genres))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProposedFilms);

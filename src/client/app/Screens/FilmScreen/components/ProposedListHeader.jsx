@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProposedListHeader = ({ genre }) => (
+const ProposedListHeader = ({ genres }) => (
   <div className="searchResults__header">
     <div className="searchResults__header-content container">
-      Films by {genre[0]} genre
+      Films by {genres[0]} genre
     </div>
   </div>
 

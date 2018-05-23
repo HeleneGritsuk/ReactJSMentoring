@@ -85,7 +85,7 @@ export const getAllFilms = (searchTerm, searchFilter, sortBy) => (dispatch) => {
     });
 };
 
-export const getFilmInfo = (id, genre) => (dispatch) => {
+export const getFilmInfo = (id, genres) => (dispatch) => {
   dispatch(beginGetFilmInfo());
 
   const filmInfo = makeFilmRequest('get', id)
@@ -104,7 +104,7 @@ export const getFilmInfo = (id, genre) => (dispatch) => {
       }
     });
 
-  const films = makeSearchRequest('get', genre[0])
+  const films = makeSearchRequest('get', genres[0])
     .then((response) => {
       if (response.status == 200) {
         return response.data;
