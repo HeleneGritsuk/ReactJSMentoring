@@ -26,28 +26,28 @@ export const SortTypes = {
 };
 
 
-const beginGetFilms = () => ({
+export const beginGetFilms = () => ({
   type: 'BEGIN_GET_FILMS',
 });
 
-const beginGetFilmInfo = () => ({
+export const beginGetFilmInfo = () => ({
   type: 'BEGIN_GET_FILM_INFO',
 });
 
-const getFilmsSuccess = data => ({
+export const getFilmsSuccess = data => ({
   type: 'GET_FILMS_SUCCESS',
   payload: data,
 });
-const getFilmInfoSuccess = data => ({
+export const getFilmInfoSuccess = data => ({
   type: 'GET_FILM_INFO_SUCCESS',
   payload: data,
 });
 
 
-const getFilmsError = () => ({
+export const getFilmsError = () => ({
   type: 'GET_FILMS_ERROR',
 });
-const getFilmInfoError = () => ({
+export const getFilmInfoError = () => ({
   type: 'GET_FILM_INFO_ERROR',
 });
 
