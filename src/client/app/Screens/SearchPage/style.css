@@ -2,9 +2,7 @@
   flex-grow: 1;
 }
 
-.searchResults__header {
-  display: flex;
-}
+
 
 .searchForm__footer {
   display: flex;
@@ -22,6 +20,10 @@
   background: #d3d3d36e;
 }
 
+.searchResults__header .container {
+  display: flex;
+}
+
 .searchForm__searchCriteriaBtns {
   background: #757373;
   box-shadow: none;
@@ -32,6 +34,7 @@
   font-weight: bold;
   margin: 5px 10px;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .searchForm__searchCriteriaBtns.active {
@@ -48,6 +51,7 @@
   font-weight: bold;
   cursor: pointer;
   margin-left: auto;
+  border-radius: 6px;
 }
 
 .searchForm__input {
@@ -58,11 +62,14 @@
   margin-left: auto;
 }
 
-.searchResults__sorting button {
+.searchResults__sortBtn{
   background: none;
   border: none;
   font-weight: bold;
   font-size: 16px;
   color: #484747;
   cursor: pointer;
+}
+.searchResults__sortBtn.active{
+   color: #ce5a35;
 }

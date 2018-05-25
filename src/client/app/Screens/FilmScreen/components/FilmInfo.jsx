@@ -1,17 +1,17 @@
 import React from 'react';
 
-const SearchHeader = ({filmInfo}) => (
-  <div className='filmInfo'>
-    <img src={filmInfo.filmImg}></img>
-    <div className='filmInfo__text'>
-      <h2>{filmInfo.filmTitle}</h2>
-      <div className='filmInfo__genre'>{filmInfo.genre}</div>
+const SearchHeader = ({ filmInfo }) => (
+  <div className="filmInfo">
+    <img className="filmInfo__img" src={filmInfo.poster_path} />
+    <div className="filmInfo__text">
+      <h2>{filmInfo.title}</h2>
+      <div className="filmInfo__genre">{filmInfo.genres.join(' & ')}</div>
       <div>
-          <div>{filmInfo.year}</div>
-          <div>{filmInfo.duration} min</div>
+        <div>{new Date(filmInfo.release_date).getFullYear()}</div>
+        <div>{filmInfo.runtime} min</div>
       </div>
       <p>
-        {filmInfo.description}
+        {filmInfo.overview}
       </p>
     </div>
 

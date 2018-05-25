@@ -1,6 +1,8 @@
 .searchResults__content {
   display: flex;
-  padding: 40px 40px;
+  padding: 40px 0;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .searchResults__message {
@@ -12,13 +14,38 @@
 }
 
 .filmItem {
-  margin: 0 20px 20px;
+  margin: 0 1.1% 35px;
+  width: 31%;
+  text-decoration: none;
+  color: #000;
 }
-
+.filmItem:hover .filmItem__img {
+  box-shadow: 7px 8px 11px 1px rgba(0,0,0,0.16);
+}
 .filmItem__info {
   display: flex;
+  margin-top: 10px;
 }
 
 .filmItem__year {
   margin-left: auto;
+}
+.filmItem__year span{
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 23px;
+}
+.filmItem__img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.filmItem__title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.filmItem__genre {
+  color: #666;
 }
