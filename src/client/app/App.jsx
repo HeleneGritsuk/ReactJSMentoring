@@ -31,12 +31,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="main-wrapper">
-        <div className="screensBtnWrapper">
-          <button className="SearchScreenBtn" onClick={this.handleSearchPageClick}>Show SearchPage view</button>
-          <button className="FilmScreenBtn" onClick={this.handleFilmPageClick}>Show FilmPage view</button>
-        </div>
-        {this.state.showSearchPage ? (<SearchScreen/>) : null}
-        {this.state.showFilmPage ? (<FilmScreen goToHomePage={this.handleSearchPageClick} />) : null}
+        {this.props.children}
       </div>
     );
   }

@@ -4,12 +4,12 @@ import { setSortingType, getFilmInfo } from '../../../redux/actions';
 
 const mapStateToProps = state => ({
   sortType: state.sortType,
-  films: state.films
+  films: state.films,
 });
 
 const mapDispatchToProps = dispatch => ({
-  sortBtnClick: (sortType) => dispatch(setSortingType(sortType)),
-  getFilmInfo: (id, genre) => dispatch(getFilmInfo(id, genre))
+  sortBtnClick: sortType => dispatch(setSortingType(sortType)),
+  getFilmInfo: (id, genre) => dispatch(getFilmInfo(id, genre)),
 });
 
 
