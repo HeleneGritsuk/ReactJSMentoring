@@ -16,5 +16,4 @@ const SearchResults = ({
   </section>
 );
 
-
 export default SearchResults;

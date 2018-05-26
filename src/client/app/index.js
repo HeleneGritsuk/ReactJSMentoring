@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './redux/store';
 import SearchScreen from './Screens/SearchPage';
+import SearchResults from './Screens/SearchPage/components/SearchResults.jsx'
 import NotFoundScreen from './Screens/404';
 import './style.css';
 
