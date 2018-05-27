@@ -6,9 +6,11 @@ const mapStateToProps = state => ({
   searchFilter: state.searchFilter
 });
 
-const mapDispatchToProps = dispatch => ({
-  setSearchFilter: (searchCriteria) => dispatch(setSearchFilter(searchCriteria)),
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    setSearchFilter: searchCriteria => () => dispatch(setSearchFilter(searchCriteria)),
+  }
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterButton);
