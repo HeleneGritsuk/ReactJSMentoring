@@ -7,6 +7,11 @@ class SearchResults extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const { sortType, searchFilter, getAllFilms } = this.props;
+    getAllFilms(this.props.match.params.searchQuery, searchFilter, sortType);
+  }
+
   componentWillUpdate(nextProps, nextState) {
     const { sortType, searchFilter, getAllFilms } = this.props;
     if (nextProps.searchQuery !== this.props.searchQuery) {

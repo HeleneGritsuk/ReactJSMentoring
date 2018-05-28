@@ -9,10 +9,12 @@ module.exports = function (env, options) {
     output: {
       path: `${__dirname}/../public`,
       filename: 'bundle.js',
+      publicPath: '/'
     },
     devtool: 'cheap-module-source-map',
     devServer: {
-        historyApiFallback: true
+      historyApiFallback: true,
+      contentBase: './'
     },
     module: {
       rules: [{
