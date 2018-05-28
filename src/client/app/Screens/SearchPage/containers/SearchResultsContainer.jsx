@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   sortBtnClick: sortType => dispatch(setSortingType(sortType)),
-  getFilmInfo: (id, genre) => dispatch(getFilmInfo(id, genre)),
+  getFilmInfo: (id, genre) => () => dispatch(getFilmInfo(id, genre)),
 });
 
 
