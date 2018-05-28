@@ -44,6 +44,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "morgan": "~1.9.0",
     "postcss-loader": "^2.1.4",
+    "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",

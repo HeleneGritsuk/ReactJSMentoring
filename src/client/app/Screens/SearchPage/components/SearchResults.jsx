@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SearchResultsHeader from './SearchResultsHeader.jsx';
 import ResultsList from '../../../components/ResultsList';
 
@@ -21,7 +22,7 @@ class SearchResults extends React.Component {
 
   render() {
     const {
-      sortType, sortBtnClick, films, getFilmInfo, searchFilter,
+      sortType, sortBtnClick, films, searchFilter,
     } = this.props;
     return (
       <section className="searchResults">
@@ -30,10 +31,17 @@ class SearchResults extends React.Component {
           sortType={sortType}
           sortBtnClick={sortBtnClick}
         />
-        <ResultsList films={films} getFilmInfo={getFilmInfo} />
+        <ResultsList films={films} />
       </section>
     );
   }
 }
+
+SearchResults.propTypes = {
+  sortType: PropTypes.string.isRequired,
+  films: PropTypes.array.isRequired,
+  sortBtnClick: PropTypes.func.isRequired,
+  searchFilter: PropTypes.string.isRequired,
+};
 
 export default SearchResults;

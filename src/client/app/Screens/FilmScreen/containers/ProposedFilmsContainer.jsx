@@ -8,8 +8,5 @@ const mapStateToProps = state => ({
   genres: state.filmInfo.data.genres
 });
 
-const mapDispatchToProps = dispatch => ({
-  getFilmInfo: (id, genres) => dispatch(getFilmInfo(id, genres))
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProposedFilms);
+export default connect(mapStateToProps, null)(ProposedFilms);
