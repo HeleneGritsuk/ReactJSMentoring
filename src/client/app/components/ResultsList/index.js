@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
+
+
+
 const ResultsList = ({ films, getFilmInfo }) => {
   if (films.length) {
     return (
@@ -9,7 +12,7 @@ const ResultsList = ({ films, getFilmInfo }) => {
         {
             films.map(film =>
             (
-              <Link to={`/film/${film.id}`} className="filmItem" key={film.id} >
+              <Link to={`/film/${film.id}`}  className="filmItem" key={film.id}>
                 <img className="filmItem__img" src={film.poster_path} />
                 <div className="filmItem__info">
                   <div className="filmItem__title">
