@@ -34,9 +34,12 @@ export const beginGetFilmInfo = () => ({
   type: 'BEGIN_GET_FILM_INFO',
 });
 
-export const getFilmsSuccess = data => ({
+export const getFilmsSuccess = (data, searchTerm) => ({
   type: 'GET_FILMS_SUCCESS',
-  payload: data,
+  payload: {
+    data: data,
+    searchTerm : searchTerm
+  }
 });
 export const getFilmInfoSuccess = data => ({
   type: 'GET_FILM_INFO_SUCCESS',
@@ -71,7 +74,7 @@ export const getAllFilms = (searchTerm, searchFilter, sortBy) => (dispatch) => {
   return makeSearchRequest('get', searchTerm, searchFilter, sortBy)
     .then((response) => {
       if (response.status == 200) {
-        dispatch(getFilmsSuccess(response.data));
+        dispatch(getFilmsSuccess(response.data, searchTerm));
       } else {
         dispatch(getFilmsError());
         const sendBlogMessage = response.data.message;
