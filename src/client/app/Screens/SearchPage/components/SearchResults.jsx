@@ -22,7 +22,7 @@ class SearchResults extends React.Component {
 
   render() {
     const {
-      sortType, sortBtnClick, films, searchFilter,
+      sortType, sortBtnClick, films, searchFilter, setSearchFilmId
     } = this.props;
     return (
       <section className="searchResults">
@@ -31,7 +31,7 @@ class SearchResults extends React.Component {
           sortType={sortType}
           sortBtnClick={sortBtnClick}
         />
-        <ResultsList films={films} />
+        <ResultsList films={films} setSearchFilmId = {setSearchFilmId}/>
       </section>
     );
   }

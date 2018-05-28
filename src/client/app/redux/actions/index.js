@@ -54,6 +54,13 @@ export const setSearchQuery = searchQuery => ({
   type: 'SET_SEARCH_QUERY',
   payload: searchQuery,
 });
+export const setSearchFilmId = (filmId, genres) => ({
+  type: 'SET_SEARCH_FILM_ID',
+  payload: {
+    filmId,
+    genres
+  }
+});
 const makeSearchRequest = (method, searchTerm, searchFilter = 'genres', sortBy = 'release_date', api = 'http://react-cdp-api.herokuapp.com/movies') =>
 // returns a Promise
   axios({

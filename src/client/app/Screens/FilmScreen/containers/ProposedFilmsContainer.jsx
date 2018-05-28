@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setSortingType, getFilmInfo } from '../../../redux/actions';
+import { setSortingType, getFilmInfo, setSearchFilmId } from '../../../redux/actions';
 import ProposedFilms from '../components/ProposedFilms.jsx';
 
 const mapStateToProps = state => ({
@@ -7,6 +7,8 @@ const mapStateToProps = state => ({
   relatedFilms: state.filmInfo.relatedFilms,
   genres: state.filmInfo.data.genres
 });
+const mapDispatchToProps = dispatch => ({
+  setSearchFilmId: (id, genres) => () => dispatch(setSearchFilmId(id, genres))
+});
 
-
-export default connect(mapStateToProps, null)(ProposedFilms);
+export default connect(mapStateToProps, mapDispatchToProps)(ProposedFilms);

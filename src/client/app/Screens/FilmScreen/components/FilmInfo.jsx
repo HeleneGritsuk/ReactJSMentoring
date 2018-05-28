@@ -8,10 +8,18 @@ class SearchHeader extends React.Component {
 
   componentDidMount() {
     const filmId = this.props.match.params.id;
-    const { filmInfo, getFilmInfo, films } = this.props;
+    const { getFilmInfo, films } = this.props;
     const film = films.find(elem => elem.id == filmId);
     getFilmInfo(filmId, film.genres);
   }
+  componentWillUpdate(nextProps, nextState) {
+    const { searchFilmId, genres, getFilmInfo } = nextProps;
+    if (nextProps.searchFilmId !== this.props.searchFilmId) {
+      getFilmInfo(searchFilmId, genres);
+    }
+
+  }
+
   render() {
     const { filmInfo } = this.props;
     if (Object.keys(filmInfo).length) {

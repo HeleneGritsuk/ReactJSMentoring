@@ -5,9 +5,9 @@ import './style.css';
 
 
 const ResultsList = (props) => {
-  const { films } = props;
+  const { films, setSearchFilmId } = props;
   const getItems = () => films.map(film =>
-    (<Link to={`/film/${film.id}`} className="filmItem" key={film.id}>
+    (<Link to={`/film/${film.id}`} className="filmItem" key={film.id} onClick = {setSearchFilmId(film.id, film.genres )}>
       <img className="filmItem__img" src={film.poster_path} />
       <div className="filmItem__info">
         <div className="filmItem__title">
