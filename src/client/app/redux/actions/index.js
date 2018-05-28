@@ -122,7 +122,7 @@ export const getFilmInfo = (id, genres) => (dispatch) => {
       }
     });
   Promise.all([filmInfo, films]).then((info) => {
-    const allInfo = Object.assign({}, info[0], { relatedFilms: info[1].data });
+    const allInfo = Object.assign({}, {data: info[0]}, { relatedFilms: info[1].data });
     dispatch(getFilmInfoSuccess(allInfo));
   });
 };

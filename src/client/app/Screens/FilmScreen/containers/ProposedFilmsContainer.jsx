@@ -3,8 +3,9 @@ import { setSortingType, getFilmInfo } from '../../../redux/actions';
 import ProposedFilms from '../components/ProposedFilms.jsx';
 
 const mapStateToProps = state => ({
-  films: state.filmInfo.relatedFilms,
-  genres: state.filmInfo.genres
+  films: state.films,
+  relatedFilms: state.filmInfo.relatedFilms,
+  genres: state.filmInfo.data.genres
 });
 
 const mapDispatchToProps = dispatch => ({

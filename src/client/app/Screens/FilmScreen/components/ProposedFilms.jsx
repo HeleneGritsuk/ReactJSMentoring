@@ -3,11 +3,11 @@ import { render } from 'react-dom';
 import ProposedListHeader from './ProposedListHeader.jsx';
 import ResultsList from '../../../components/ResultsList';
 
-const ProposedFilms = ({ genres, films, getFilmInfo })=> (
+const ProposedFilms = ({ genres, relatedFilms, getFilmInfo })=> (
       <section className="searchResults">
 
           <ProposedListHeader genres={genres} />
-          <ResultsList films={films} getFilmInfo = {getFilmInfo}/>
+          <ResultsList films={relatedFilms} getFilmInfo = {getFilmInfo}/>
 
       </section>
     );
