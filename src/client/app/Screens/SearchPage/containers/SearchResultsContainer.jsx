@@ -5,8 +5,8 @@ import { setSortingType, getFilmInfo, getAllFilms } from '../../../redux/actions
 
 const mapStateToProps = (state, {params}) => ({
   sortType: state.sortType,
-  films: state.films.list,
-  searchQuery: state.films.searchQuery,
+  films: state.films,
+  searchQuery: state.searchQuery,
   searchFilter: state.searchFilter,
   params: params
 });

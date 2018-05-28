@@ -1,12 +1,8 @@
 
-const films = (state = {list:[], searchQuery: ''}, action) => {
+const films = (state = [], action) => {
   switch (action.type) {
-    case 'GET_FILMS_SUCCESS': {
-      return {
-        list: action.payload.data,
-        searchQuery: action.payload.searchTerm,
-      }
-    }
+    case 'GET_FILMS_SUCCESS':
+      return  action.payload.data;
     default:
       return state;
   }
