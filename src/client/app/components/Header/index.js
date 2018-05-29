@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-const Header = ({isFilmScreen, goToHomePage}) => (
+const Header = ({isFilmScreen}) => (
   <header>
     <h1>netflixroulette</h1>
-    {isFilmScreen ? <a className='homeBtn' href="#" onClick = {goToHomePage}>Search</a> : null }
+    {isFilmScreen ? <Link to="/" className='homeBtn'>Search</Link> : null }
   </header>
 
 );

@@ -34,9 +34,9 @@ export const beginGetFilmInfo = () => ({
   type: 'BEGIN_GET_FILM_INFO',
 });
 
-export const getFilmsSuccess = data => ({
+export const getFilmsSuccess = (data) => ({
   type: 'GET_FILMS_SUCCESS',
-  payload: data,
+  payload: data
 });
 export const getFilmInfoSuccess = data => ({
   type: 'GET_FILM_INFO_SUCCESS',
@@ -50,7 +50,17 @@ export const getFilmsError = () => ({
 export const getFilmInfoError = () => ({
   type: 'GET_FILM_INFO_ERROR',
 });
-
+export const setSearchQuery = searchQuery => ({
+  type: 'SET_SEARCH_QUERY',
+  payload: searchQuery,
+});
+export const setSearchFilmId = (filmId, genres) => ({
+  type: 'SET_SEARCH_FILM_ID',
+  payload: {
+    filmId,
+    genres
+  }
+});
 const makeSearchRequest = (method, searchTerm, searchFilter = 'genres', sortBy = 'release_date', api = 'http://react-cdp-api.herokuapp.com/movies') =>
 // returns a Promise
   axios({
@@ -119,8 +129,7 @@ export const getFilmInfo = (id, genres) => (dispatch) => {
       }
     });
   Promise.all([filmInfo, films]).then((info) => {
-    const allInfo = Object.assign({}, info[0], { relatedFilms: info[1].data });
+    const allInfo = Object.assign({}, {data: info[0]}, { relatedFilms: info[1].data });
     dispatch(getFilmInfoSuccess(allInfo));
   });
-
 };

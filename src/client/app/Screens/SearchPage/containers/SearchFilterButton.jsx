@@ -3,11 +3,11 @@ import FilterButton from '../components/FilterButton.jsx';
 import { setSearchFilter } from '../../../redux/actions';
 
 const mapStateToProps = state => ({
-  searchFilter: state.searchFilter
+  searchFilter: state.searchFilter,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setSearchFilter: (searchCriteria) => dispatch(setSearchFilter(searchCriteria)),
+  setSearchFilter: searchCriteria => () => dispatch(setSearchFilter(searchCriteria)),
 });
 
 
