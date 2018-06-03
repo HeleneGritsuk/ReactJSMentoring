@@ -103,3 +103,21 @@ Evaluation criteria:
 --- | --- | --- | ---
 Have 2+ pages which displays on different URLs | Implement displaying 404 page for all invalid URLs | By default user lands on a new page with empty results state | - When user performs a search on the page, change URL and show search results
 - When new user enters the site using direct link with search parameters - show search results
+
+
+## Task 7 (Server Side Rendering)
+
+Implement server rendering in your NodeJS application.
+Use async actions, redux should provide initial state from server.
+Server should handle query parameters to compute correct initial state.
+Implement route masking. Next.js provides this functionality out of the box, but its usage is not required. Example of route masking:
+localhost/search/Hello%20Friend
+localhost/film/id
+
+Add code splitting to your app. You can use dynamic import() syntax in conjunction with webpack, some library (react-loadable), or next.js.
+
+Evaluation criteria:
+
+2 | 3 | 4 | 5
+--- | --- | --- | ---
+Async actions, redux provides initial state from server | Server app handles query params to compute initial state | Route masking. Can be implemented, or mentee can switch to next.js for SSR | Code splitting for optimized performance. Goes OOTB with next.js
