@@ -4,16 +4,12 @@ import SearchResultsHeader from './SearchResultsHeader.jsx';
 import ResultsList from '../../../components/ResultsList';
 
 class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const { sortType, searchFilter, getAllFilms } = this.props;
     getAllFilms(this.props.match.params.searchQuery, searchFilter, sortType);
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps) {
     const { sortType, searchFilter, getAllFilms } = this.props;
     if (nextProps.searchQuery !== this.props.searchQuery) {
       getAllFilms(nextProps.match.params.searchQuery, searchFilter, sortType);
@@ -22,7 +18,7 @@ class SearchResults extends React.Component {
 
   render() {
     const {
-      sortType, sortBtnClick, films, searchFilter, setSearchFilmId
+      sortType, sortBtnClick, films, setSearchFilmId,
     } = this.props;
     return (
       <section className="searchResults">
@@ -31,7 +27,7 @@ class SearchResults extends React.Component {
           sortType={sortType}
           sortBtnClick={sortBtnClick}
         />
-        <ResultsList films={films} setSearchFilmId = {setSearchFilmId}/>
+        <ResultsList films={films} setSearchFilmId={setSearchFilmId} />
       </section>
     );
   }
@@ -42,6 +38,11 @@ SearchResults.propTypes = {
   films: PropTypes.array.isRequired,
   sortBtnClick: PropTypes.func.isRequired,
   searchFilter: PropTypes.string.isRequired,
+  searchQuery: PropTypes.string.isRequired,
+  setSearchFilmId: PropTypes.func.isRequired,
+  match: PropTypes.object,
+  params: PropTypes.object,
+  getAllFilms: PropTypes.func.isRequired,
 };
 
 export default SearchResults;
