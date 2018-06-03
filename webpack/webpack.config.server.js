@@ -1,21 +1,18 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  name: 'server',
   mode: 'development',
-  name: 'client',
-  entry: `${__dirname}/../src/client/app/index.js`,
+  target: 'node',
+  entry: './src/client/app/serverRenderer.js',
+  externals: [nodeExternals()],
   output: {
     path: `${__dirname}/../public`,
-    filename: 'bundle.js',
-    publicPath: '/',
+    filename: 'serverRenderer.js',
+    libraryTarget: 'commonjs2'
   },
-  devtool: 'cheap-module-source-map',
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './',
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [{
@@ -46,13 +43,5 @@ module.exports = {
     },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: `${__dirname}/../src/client/index.html`,
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
+
 };
