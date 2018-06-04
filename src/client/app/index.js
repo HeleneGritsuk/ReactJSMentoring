@@ -7,4 +7,4 @@ const root = (
   <App />
 );
 
-hydrate(App, document.getElementById('app'));
+hydrate(root, document.getElementById('app'));

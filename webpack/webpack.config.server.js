@@ -1,4 +1,6 @@
 const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   name: 'server',
@@ -43,5 +45,13 @@ module.exports = {
     },
     ],
   },
-
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${__dirname}/../src/client/index.html`,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
 };

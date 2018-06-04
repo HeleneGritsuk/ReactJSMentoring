@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 import App from './App';
 
@@ -19,13 +20,23 @@ function renderHTML(html) {
   </html>
   `;
 }
-module.exports = (req, res) => {
-  res.send(renderHTML());
-};
 
-export default function serverRenderer() {
-  return (req, res) => {
-    const htmlString = renderToString(<App />);
-    res.send(renderHTML(htmlString));
-  };
+function handleRender(req, res) {
+  const context = {};
+  const app = (
+    <StaticRouter location={req.url} context={context} >
+      <App />
+    </StaticRouter>
+  );
+
+  const html = renderToString(app);
+
+  if (context.url) {
+    // Somewhere a `<Redirect>` was rendered
+    return res.redirect(context.url);
+  }
+
+  return res.send(renderHTML(html));
 }
+
+export default handleRender;
