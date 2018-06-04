@@ -1,9 +1,11 @@
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import { renderToString } from 'react-dom/server';
 import App from './App';
 
-function renderHTML(html) {
+function renderHTML(html, preloadedState) {
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -15,6 +17,9 @@ function renderHTML(html) {
     </head>
     <body>
       <div id="app" class="main">${html}</div>
+      <script>
+          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+      </script>
       <script src="./index.js"></script>
     </body>
   </html>
@@ -22,11 +27,14 @@ function renderHTML(html) {
 }
 
 function handleRender(req, res) {
+  const reduxStore = store;
   const context = {};
   const app = (
-    <StaticRouter location={req.url} context={context} >
-      <App />
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context} >
+        <App />
+      </StaticRouter>
+    </Provider>
   );
 
   const html = renderToString(app);
@@ -35,8 +43,9 @@ function handleRender(req, res) {
     // Somewhere a `<Redirect>` was rendered
     return res.redirect(context.url);
   }
+  const preloadedState = reduxStore.getState();
 
-  return res.send(renderHTML(html));
+  return res.send(renderHTML(html, preloadedState));
 }
 
 export default handleRender;
