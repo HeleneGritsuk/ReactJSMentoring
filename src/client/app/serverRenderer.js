@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import configureStore from './redux/store';
 import { renderToString } from 'react-dom/server';
 import App from './App';
 
@@ -14,38 +14,47 @@ function renderHTML(html, preloadedState) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>React SSR</title>
+      ${process.env.NODE_ENV === 'development' ? '' : '<link href="./main.css" rel="stylesheet" type="text/css">'}
     </head>
     <body>
       <div id="app" class="main">${html}</div>
       <script>
           window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
       </script>
-      <script src="./index.js"></script>
+      <script src="localhost:3000/bundle.js"></script>
     </body>
   </html>
   `;
 }
 
-function handleRender(req, res) {
-  const reduxStore = store;
-  const context = {};
-  const app = (
-    <Provider store={store}>
-      <StaticRouter location={req.url} context={context} >
-        <App />
-      </StaticRouter>
-    </Provider>
-  );
+export default function serverRenderer() {
+  return (req, res) => {
+    const store = configureStore();
+    // This context object contains the results of the render
+    const context = {};
 
-  const html = renderToString(app);
+    const root = (
+      <App
+        context={context}
+        location={req.url}
+        Router={StaticRouter}
+        store={store}
+      />
+    );
 
-  if (context.url) {
-    // Somewhere a `<Redirect>` was rendered
-    return res.redirect(context.url);
-  }
-  const preloadedState = reduxStore.getState();
+    const htmlString = renderToString(root);
 
-  return res.send(renderHTML(html, preloadedState));
+    // context.url will contain the URL to redirect to if a <Redirect> was used
+    if (context.url) {
+      res.writeHead(302, {
+        Location: context.url,
+      });
+      res.end();
+      return;
+    }
+
+    const preloadedState = store.getState();
+
+    res.send(renderHTML(htmlString, preloadedState));
+  };
 }
-
-export default handleRender;

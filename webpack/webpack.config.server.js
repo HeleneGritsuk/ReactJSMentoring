@@ -1,57 +1,43 @@
+const merge = require('webpack-merge');
 const nodeExternals = require('webpack-node-externals');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const common = require('./webpack.config.common');
 
-module.exports = {
+module.exports = merge(common, {
   name: 'server',
-  mode: 'development',
   target: 'node',
   entry: './src/client/app/serverRenderer.js',
   externals: [nodeExternals()],
   output: {
-    path: `${__dirname}/../public`,
-    filename: 'serverRenderer.js',
-    libraryTarget: 'commonjs2'
+    filename: './serverRenderer.js',
+    libraryTarget: 'commonjs2',
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.css$/,
+  //       include: /src/,
+  //       use: [
+  //         {
+  //           loader: 'css-loader/locals', // It doesn't embed CSS but only exports the identifier mappings.
+  //           options: {
+  //             modules: true,
+  //             localIdentName: '[name]-[hash:5]',
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+
   module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    },
-    {
-      test: /\.html$/,
-      use: [{
-        loader: 'html-loader',
-      }],
-    },
-    {
-      test: /\.css$/,
-      use: [
-        { loader: 'style-loader' },
-        { loader: 'css-loader' },
-        { loader: 'postcss-loader' },
-      ],
-    },
-    {
-      test: /\.(ttf|eot|svg|woff|jpg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file-loader',
-      options: {
-        name: '[path][name].[ext]?[hash]',
+    rules: [
+      {
+        test: /\.css$/,
+        include: /src/,
+        use: [
+          'css-loader/locals', // It doesn't embed CSS but only exports the identifier mappings.
+        ],
       },
-    },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: `${__dirname}/../src/client/index.html`,
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
-};
+});
