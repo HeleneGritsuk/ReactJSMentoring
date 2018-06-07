@@ -55,7 +55,7 @@ module.exports = {
                 "extensions": [".js", ".jsx"]
             }
         ],
-        "react/jsx-indent": [2, 4],
+        "react/jsx-indent": [2, 2],
         "react/prop-types": [
             "error",
             {
