@@ -1,13 +1,18 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import SearchResults from '../components/SearchResults.jsx';
-import { setSortingType, getFilmInfo, getAllFilms, setSearchFilmId } from '../../../redux/actions';
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import SearchResults from "../components/SearchResults.jsx";
+import {
+  setSortingType,
+  getFilmInfo,
+  getAllFilms,
+  setSearchFilmId
+} from "../../../redux/actions";
 
 const mapStateToProps = state => ({
   sortType: state.sortType,
   films: state.films,
   searchQuery: state.searchQuery,
-  searchFilter: state.searchFilter,
+  searchFilter: state.searchFilter
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,5 +23,6 @@ const mapDispatchToProps = dispatch => ({
   setSearchFilmId: (id, genres) => () => dispatch(setSearchFilmId(id, genres))
 });
 
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchResults));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SearchResults)
+);

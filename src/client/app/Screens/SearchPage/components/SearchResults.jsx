@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SearchResultsHeader from './SearchResultsHeader.jsx';
-import ResultsList from '../../../components/ResultsList';
+import React from "react";
+import PropTypes from "prop-types";
+import SearchResultsHeader from "./SearchResultsHeader.jsx";
+import ResultsList from "../../../components/ResultsList";
 
 class SearchResults extends React.Component {
   componentDidMount() {
@@ -17,9 +17,7 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    const {
-      sortType, sortBtnClick, films, setSearchFilmId,
-    } = this.props;
+    const { sortType, sortBtnClick, films, setSearchFilmId } = this.props;
     return (
       <section className="searchResults">
         <SearchResultsHeader
@@ -28,7 +26,7 @@ class SearchResults extends React.Component {
           sortBtnClick={sortBtnClick}
         />
         <ResultsList films={films} setSearchFilmId={setSearchFilmId} />
-      </section>
+        </section>
     );
   }
 }
@@ -42,7 +40,7 @@ SearchResults.propTypes = {
   setSearchFilmId: PropTypes.func.isRequired,
   match: PropTypes.object,
   params: PropTypes.object,
-  getAllFilms: PropTypes.func.isRequired,
+  getAllFilms: PropTypes.func.isRequired
 };
 
 export default SearchResults;

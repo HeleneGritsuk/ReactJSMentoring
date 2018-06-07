@@ -36,7 +36,6 @@ class SearchHeader extends React.Component {
           </div>
 
         </div>
-
       );
     }
     return (

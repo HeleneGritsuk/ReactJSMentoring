@@ -8,6 +8,7 @@
     "build": "webpack --mode production --config webpack/webpack.prod.config.js",
     "start": "webpack-dev-server --mode development --config webpack/webpack.dev.config.js --hot --inline",
     "test": "jest",
+    "lint":  "eslint ./cache --ignore-pattern .gitignore --fix",
     "cypress:open": "cypress open"
   },
   "jest": {
@@ -36,9 +37,11 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.1",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",

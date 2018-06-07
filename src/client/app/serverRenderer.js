@@ -1,9 +1,8 @@
-import React from 'react';
-import { StaticRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import configureStore from './redux/store';
-import { renderToString } from 'react-dom/server';
-import App from './App';
+import React from "react";
+import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router-dom";
+import configureStore from "./redux/store";
+import App from "./App";
 
 function renderHTML(html, preloadedState) {
   return `
@@ -14,12 +13,19 @@ function renderHTML(html, preloadedState) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>React SSR</title>
-      ${process.env.NODE_ENV === 'development' ? '' : '<link href="./main.css" rel="stylesheet" type="text/css">'}
+      ${
+        process.env.NODE_ENV === "development"
+          ? ""
+          : '<link href="./main.css" rel="stylesheet" type="text/css">'
+      }
     </head>
     <body>
       <div id="app" class="main">${html}</div>
       <script>
-          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(
+            /</g,
+            "\\u003c"
+          )}
       </script>
       <script src="localhost:3000/bundle.js"></script>
     </body>
@@ -39,7 +45,7 @@ export default function serverRenderer() {
         location={req.url}
         Router={StaticRouter}
         store={store}
-      />
+        />
     );
 
     const htmlString = renderToString(root);
@@ -47,7 +53,7 @@ export default function serverRenderer() {
     // context.url will contain the URL to redirect to if a <Redirect> was used
     if (context.url) {
       res.writeHead(302, {
-        Location: context.url,
+        Location: context.url
       });
       res.end();
       return;

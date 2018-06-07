@@ -1,4 +1,3 @@
-
 export { default as FilterButton } from './FilterButton.jsx';
 export { default as SearchBtn } from './SearchBtn.jsx';
 export { default as SearchPageHeader } from './SearchPageHeader.jsx';

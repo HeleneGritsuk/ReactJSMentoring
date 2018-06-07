@@ -1,33 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import './style.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "./style.css";
 
-
-const ResultsList = (props) => {
+const ResultsList = props => {
   const { films, setSearchFilmId } = props;
-  const getItems = () => films.map(film =>
-    (<Link to={`/film/${film.id}`} className="filmItem" key={film.id} onClick = {setSearchFilmId(film.id, film.genres )}>
-      <img className="filmItem__img" src={film.poster_path} />
-      <div className="filmItem__info">
-        <div className="filmItem__title">
-          {film.title}
+  const getItems = () =>
+    films.map(film => (
+      <Link
+        to={`/film/${film.id}`}
+        className="filmItem"
+        key={film.id}
+        onClick={setSearchFilmId(film.id, film.genres)}
+      >
+        <img className="filmItem__img" src={film.poster_path} />
+        <div className="filmItem__info">
+          <div className="filmItem__title">{film.title}</div>
+            <div className="filmItem__year">
+            <span>{new Date(film.release_date).getFullYear()}</span>
+          </div>
         </div>
-        <div className="filmItem__year">
-          <span>{new Date(film.release_date).getFullYear()}</span>
-        </div>
-      </div>
-      <div className="filmItem__genre">
-        {film.genres.join(' & ')}
-      </div>
-    </Link>));
+        <div className="filmItem__genre">{film.genres.join(" & ")}</div>
+      </Link>
+    ));
 
   if (films.length) {
-    return (
-      <div className="searchResults__content container">
-        {getItems()}
-      </div>
-    );
+    return <div className="searchResults__content container">{getItems()}</div>;
   }
   return (
     <div className="searchResults__content container">
@@ -38,6 +36,7 @@ const ResultsList = (props) => {
 
 ResultsList.propTypes = {
   films: PropTypes.array.isRequired,
+  setSearchFilmId: PropTypes.func.isRequired
 };
 
 export default ResultsList;
