@@ -8,7 +8,7 @@
     "build": "webpack --mode production --config webpack/webpack.prod.config.js",
     "start": "webpack-dev-server --mode development --config webpack/webpack.dev.config.js --hot --inline",
     "test": "jest",
-    "lint":  "eslint ./cache --ignore-pattern .gitignore --fix",
+    "lint":  "eslint ./src --ignore-pattern .gitignore --fix",
     "cypress:open": "cypress open"
   },
   "jest": {
