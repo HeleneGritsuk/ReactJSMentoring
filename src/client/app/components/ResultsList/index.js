@@ -16,7 +16,7 @@ const ResultsList = props => {
         <img className="filmItem__img" src={film.poster_path} />
         <div className="filmItem__info">
           <div className="filmItem__title">{film.title}</div>
-            <div className="filmItem__year">
+          <div className="filmItem__year">
             <span>{new Date(film.release_date).getFullYear()}</span>
           </div>
         </div>

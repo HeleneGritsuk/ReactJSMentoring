@@ -27,7 +27,7 @@ function renderHTML(html, preloadedState) {
             "\\u003c"
           )}
       </script>
-      <script src="localhost:3000/bundle.js"></script>
+      <script src="./bundle.js"></script>
     </body>
   </html>
   `;
@@ -45,7 +45,7 @@ export default function serverRenderer() {
         location={req.url}
         Router={StaticRouter}
         store={store}
-        />
+      />
     );
 
     const htmlString = renderToString(root);

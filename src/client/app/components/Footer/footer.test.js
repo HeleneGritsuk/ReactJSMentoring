@@ -1,12 +1,9 @@
-import React from 'react';
-import Footer from './index';
-import renderer from 'react-test-renderer';
+import React from "react";
+import Footer from "./index";
+import renderer from "react-test-renderer";
 
-test('Footer is rendered normally', () => {
-  const component = renderer.create(
-    <Footer/>,
-  );
-  let tree = component.toJSON();
+test("Footer is rendered normally", () => {
+  const component = renderer.create(<Footer />);
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-
 });

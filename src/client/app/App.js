@@ -20,4 +20,6 @@ const App = ({ Router, location, context, store }) => (
   </Provider>
 );
 
+App.propTypes = {};
+
 export default hot(module)(App);
