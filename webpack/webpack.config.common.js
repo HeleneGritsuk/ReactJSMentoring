@@ -1,39 +1,52 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const isDevMod = process.env.NODE_ENV === 'development';
+const isDevMod = process.env.NODE_ENV === "development";
 
 module.exports = {
   mode: process.env.NODE_ENV,
 
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.js",
     path: `${__dirname}/../public`,
-    publicPath: '/',
+    publicPath: "/"
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: "/",
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"]
   },
 
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: "babel-loader"
       },
-    ],
+      // {
+      //   test: /\.html$/,
+      //   use: [
+      //     {
+      //       loader: "html-loader",
+      //       options: {
+      //         minimize: !isDevMod
+      //       }
+      //     }
+      //   ]
+      // }
+    ]
   },
 
   plugins: [
-    isDevMod ? new webpack.NamedModulesPlugin() : new webpack.HashedModuleIdsPlugin(),
+    isDevMod
+      ? new webpack.NamedModulesPlugin()
+      : new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
-      template: `${__dirname}/../src/client/index.html`,
-    }),
-  ],
+      template: `${__dirname}/../src/client/index.html`
+    })
+  ]
 };
