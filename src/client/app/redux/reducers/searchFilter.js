@@ -1,11 +1,8 @@
-import { SearchFilters } from '../actions';
+import { SearchFilters } from "../actions";
 
-const searchFilter = (
-  state =  'title',
-  action,
-) => {
+const searchFilter = (state = "title", action) => {
   switch (action.type) {
-    case 'SET_SEARCH_FILTER':
+    case "SET_SEARCH_FILTER":
       return action.payload.filter;
     default:
       return state;

@@ -1,14 +1,11 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 const Footer = () => (
   <footer>
     <div className="container">
-      <p>
-        netflixroulette
-      </p>
+      <p>netflixroulette</p>
     </div>
-
   </footer>
 );
 export default Footer;

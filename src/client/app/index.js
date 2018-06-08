@@ -1,26 +1,10 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import store from './redux/store';
-import SearchScreen from './Screens/SearchPage';
-import FilmScreen from './Screens/FilmScreen';
-import SearchResultsContainer from './Screens/SearchPage/containers/SearchResultsContainer.jsx';
-import NotFoundScreen from './Screens/404';
-import './style.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { hydrate } from "react-dom";
+import configureStore from "./redux/store";
+import App from "./App";
 
+const store = configureStore(window.PRELOADED_STATE);
+const root = <App Router={BrowserRouter} store={store} />;
 
-render(
-  (
-    <Provider store={store}>
-      <Router>
-        <Switch>
-              <Route exact path="/" component={SearchScreen} />
-              <Route path="/search/:searchQuery" component={SearchScreen} />
-              <Route path="/film/:id" component={FilmScreen} />
-              <Route path="*" component={NotFoundScreen} />
-        </Switch>
-      </Router>
-    </Provider>
-  ), document.getElementById('app'),
-);
+hydrate(root, document.getElementById("app"));

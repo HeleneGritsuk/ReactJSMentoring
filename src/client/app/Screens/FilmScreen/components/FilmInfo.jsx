@@ -1,23 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 
 class SearchHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const filmId = this.props.match.params.id;
     const { getFilmInfo, films } = this.props;
     const film = films.find(elem => elem.id == filmId);
     getFilmInfo(filmId, film.genres);
   }
-  componentWillUpdate(nextProps, nextState) {
+
+  componentWillUpdate(nextProps) {
     const { searchFilmId, genres, getFilmInfo } = nextProps;
     if (nextProps.searchFilmId !== this.props.searchFilmId) {
       getFilmInfo(searchFilmId, genres);
     }
-
   }
 
   render() {
@@ -25,7 +22,7 @@ class SearchHeader extends React.Component {
     if (Object.keys(filmInfo).length) {
       return (
         <div className="filmInfo">
-          <img className="filmInfo__img" src={filmInfo.poster_path} />
+          <img className="filmInfo__img" alt="poster" src={filmInfo.poster_path} />
           <div className="filmInfo__text">
             <h2>{filmInfo.title}</h2>
             <div className="filmInfo__genre">{filmInfo.genres.join(' & ')}</div>
@@ -39,7 +36,6 @@ class SearchHeader extends React.Component {
           </div>
 
         </div>
-
       );
     }
     return (
@@ -49,4 +45,14 @@ class SearchHeader extends React.Component {
     );
   }
 }
+
+SearchHeader.propTypes = {
+  getFilmInfo: PropTypes.func.isRequired,
+  films: PropTypes.array.isRequired,
+  filmInfo: PropTypes.object.isRequired,
+  searchFilmId: PropTypes.object,
+  match: PropTypes.object,
+  params: PropTypes.object,
+};
+
 export default withRouter(SearchHeader);

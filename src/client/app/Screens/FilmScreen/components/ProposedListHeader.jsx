@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const ProposedListHeader = ({ genres }) => {
-  if(genres && genres.length) {
+  if (genres && genres.length) {
     return (
       <div className="searchResults__header">
         <div className="searchResults__header-content container">
           Films by {genres[0]} genre
-        </div>
+          </div>
       </div>
     );
   }
-  return(
+  return (
     <div className="searchResults__header">
-      <div className="searchResults__header-content container">
-
-      </div>
+      <div className="searchResults__header-content container" />
     </div>
   );
 };

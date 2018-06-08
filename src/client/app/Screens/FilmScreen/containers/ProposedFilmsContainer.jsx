@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { setSortingType, getFilmInfo, setSearchFilmId } from '../../../redux/actions';
-import ProposedFilms from '../components/ProposedFilms.jsx';
+import { connect } from "react-redux";
+import { setSearchFilmId } from "../../../redux/actions";
+import ProposedFilms from "../components/ProposedFilms.jsx";
 
 const mapStateToProps = state => ({
   films: state.films,
