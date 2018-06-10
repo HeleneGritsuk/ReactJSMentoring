@@ -121,3 +121,14 @@ Evaluation criteria:
 2 | 3 | 4 | 5
 --- | --- | --- | ---
 Async actions, redux provides initial state from server | Server app handles query params to compute initial state | Route masking. Can be implemented, or mentee can switch to next.js for SSR | Code splitting for optimized performance. Goes OOTB with next.js
+
+
+## Task 8 (Useful libraries)
+
+After lecture, review your app. Find libraries that are applicable for your app and can simplify it. Integrate those libraries.
+Discuss your choices with mentor. Mentor evaluates your work on his own choice.
+Evaluation criteria:
+
+2 | 3 | 4 | 5
+--- | --- | --- | ---
+Apply Airbnb best practices to your project:  clean up the code of your application: follow the required naming convention, make sure code has proper alignment and there are no redundant spaces, order all your methods in a right way | Add storybook to your project; Use flow instead of Prop Types | Use styled components / jss | Use reselect/immutable
