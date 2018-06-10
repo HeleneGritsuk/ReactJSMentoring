@@ -8,8 +8,9 @@
     "build": "webpack --mode production --config webpack/webpack.prod.config.js",
     "start": "webpack-dev-server --mode development --config webpack/webpack.dev.config.js --hot --inline",
     "test": "jest",
-    "lint":  "eslint ./src --ignore-pattern .gitignore --fix",
-    "cypress:open": "cypress open"
+    "lint": "eslint ./src --ignore-pattern .gitignore --fix",
+    "cypress:open": "cypress open",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "jest": {
     "collectCoverage": true,
@@ -29,6 +30,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@storybook/react": "^3.4.6",
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.3",
     "clean-webpack-plugin": "^0.1.19",
