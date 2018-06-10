@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 
 class SearchHeader extends React.Component {
   componentDidMount() {
@@ -10,9 +10,9 @@ class SearchHeader extends React.Component {
     getFilmInfo(filmId, film.genres);
   }
 
-  componentWillUpdate(nextProps) {
-    const { searchFilmId, genres, getFilmInfo } = nextProps;
-    if (nextProps.searchFilmId !== this.props.searchFilmId) {
+  componentDidUpdate(prevProps) {
+    const { searchFilmId, genres, getFilmInfo } = this.props;
+    if (this.props.searchFilmId !== prevProps.searchFilmId) {
       getFilmInfo(searchFilmId, genres);
     }
   }
@@ -22,27 +22,24 @@ class SearchHeader extends React.Component {
     if (Object.keys(filmInfo).length) {
       return (
         <div className="filmInfo">
-          <img className="filmInfo__img" alt="poster" src={filmInfo.poster_path} />
+          <img
+            className="filmInfo__img"
+            alt="poster"
+            src={filmInfo.poster_path}
+          />
           <div className="filmInfo__text">
             <h2>{filmInfo.title}</h2>
-            <div className="filmInfo__genre">{filmInfo.genres.join(' & ')}</div>
+            <div className="filmInfo__genre">{filmInfo.genres.join(" & ")}</div>
             <div>
               <div>{new Date(filmInfo.release_date).getFullYear()}</div>
               <div>{filmInfo.runtime} min</div>
             </div>
-            <p>
-              {filmInfo.overview}
-            </p>
+            <p>{filmInfo.overview}</p>
           </div>
-
         </div>
       );
     }
-    return (
-      <div className="filmInfo">
-          Loading...
-      </div>
-    );
+    return <div className="filmInfo">Loading...</div>;
   }
 }
 
@@ -50,9 +47,13 @@ SearchHeader.propTypes = {
   getFilmInfo: PropTypes.func.isRequired,
   films: PropTypes.array.isRequired,
   filmInfo: PropTypes.object.isRequired,
-  searchFilmId: PropTypes.object,
+  searchFilmId: PropTypes.number.isRequired,
   match: PropTypes.object,
   params: PropTypes.object,
+  genres: PropTypes.array.isRequired
 };
-
+SearchHeader.defaultProps = {
+  films: [],
+  genres: []
+};
 export default withRouter(SearchHeader);

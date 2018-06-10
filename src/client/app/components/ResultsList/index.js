@@ -39,4 +39,8 @@ ResultsList.propTypes = {
   setSearchFilmId: PropTypes.func.isRequired
 };
 
+ResultsList.defaultProps = {
+  films: []
+};
+
 export default ResultsList;

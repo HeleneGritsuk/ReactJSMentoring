@@ -9,10 +9,10 @@ class SearchResults extends React.Component {
     getAllFilms(this.props.match.params.searchQuery, searchFilter, sortType);
   }
 
-  componentWillUpdate(nextProps) {
-    const { sortType, searchFilter, getAllFilms } = this.props;
-    if (nextProps.searchQuery !== this.props.searchQuery) {
-      getAllFilms(nextProps.match.params.searchQuery, searchFilter, sortType);
+  componentDidUpdate(prevProps) {
+    const { sortType, searchFilter, getAllFilms } = prevProps;
+    if (this.props.searchQuery !== prevProps.searchQuery) {
+      getAllFilms(this.props.match.params.searchQuery, searchFilter, sortType);
     }
   }
 
@@ -26,7 +26,7 @@ class SearchResults extends React.Component {
           sortBtnClick={sortBtnClick}
         />
         <ResultsList films={films} setSearchFilmId={setSearchFilmId} />
-        </section>
+      </section>
     );
   }
 }
@@ -43,4 +43,9 @@ SearchResults.propTypes = {
   getAllFilms: PropTypes.func.isRequired
 };
 
+SearchResults.defaultProps = {
+  films: [],
+  searchFilter: "title",
+  sortType: "release_date"
+};
 export default SearchResults;

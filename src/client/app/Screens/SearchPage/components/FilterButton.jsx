@@ -24,5 +24,7 @@ FilterButton.propTypes = {
   filter: PropTypes.string.isRequired,
   children: PropTypes.any
 };
-
+FilterButton.defaultProps = {
+  searchFilter: "title"
+};
 export default FilterButton;

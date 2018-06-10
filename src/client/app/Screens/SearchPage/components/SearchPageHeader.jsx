@@ -20,13 +20,13 @@ class SearchPageHeader extends React.Component {
               type="text"
               className="searchForm__input"
               ref={this.textInput}
-          />
+            />
             <div className="searchForm__footer">
               <div className="searchForm__searchCriteria">
                 <span>Search by</span>
-                            <SearchFilterButton filter="title">Title</SearchFilterButton>
+                <SearchFilterButton filter="title">Title</SearchFilterButton>
                 <SearchFilterButton filter="genres">Genre</SearchFilterButton>
-                        </div>
+              </div>
               <SearchFilmButton
                 className="searchForm__searchBtn"
                 inputRef={this.textInput}

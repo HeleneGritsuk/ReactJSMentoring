@@ -1,5 +1,3 @@
-import { SearchFilters } from "../actions";
-
 const searchFilter = (state = "title", action) => {
   switch (action.type) {
     case "SET_SEARCH_FILTER":

@@ -13,7 +13,7 @@ const SortButton = props => {
       }
     >
       {children}
-      </button>
+    </button>
   );
 };
 
@@ -23,5 +23,7 @@ SortButton.propTypes = {
   sortBtnClick: PropTypes.func.isRequired,
   children: PropTypes.any
 };
-
+SortButton.defaultProps = {
+  sortType: "release_date"
+};
 export default SortButton;

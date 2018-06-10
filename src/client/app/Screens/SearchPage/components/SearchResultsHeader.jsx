@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SortButton from "./SortButton.jsx";
-import { SortTypes } from "../../../redux/actions";
 
 const SearchResultsHeader = props => {
   const { resultsNumber, sortBtnClick, sortType } = props;
@@ -10,8 +9,8 @@ const SearchResultsHeader = props => {
       {resultsNumber > 0 && (
         <div className="searchResults__header-content container">
           <div className="searchResults__foundNumber">
-                {resultsNumber} movies found
-            </div>
+            {resultsNumber} movies found
+          </div>
           <div className="searchResults__sorting">
             Sort by
             <SortButton
@@ -20,18 +19,18 @@ const SearchResultsHeader = props => {
               sortBtnClick={sortBtnClick}
             >
               release date
-              </SortButton>
+            </SortButton>
             <SortButton
               sort="vote_average"
               sortType={sortType}
               sortBtnClick={sortBtnClick}
             >
               rating
-              </SortButton>
-            </div>
-      </div>
+            </SortButton>
+          </div>
+        </div>
       )}
-      </div>
+    </div>
   );
 };
 
@@ -40,5 +39,7 @@ SearchResultsHeader.propTypes = {
   sortBtnClick: PropTypes.func.isRequired,
   sortType: PropTypes.string.isRequired
 };
-
+SearchResultsHeader.defaultProps = {
+  sortType: "release_date"
+};
 export default SearchResultsHeader;

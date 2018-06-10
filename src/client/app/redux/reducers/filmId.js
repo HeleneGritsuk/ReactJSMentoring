@@ -1,4 +1,4 @@
-const searchFilmId = (state = { id: "", genres: "" }, action) => {
+const searchFilmId = (state = { id: "", genres: [] }, action) => {
   switch (action.type) {
     case "SET_SEARCH_FILM_ID":
       return {
