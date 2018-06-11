@@ -1,10 +1,17 @@
 // @flow
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-const ResultsList = props => {
+type ResultsListProps = {
+  films: Array<Object>,
+  setSearchFilmId: Function
+};
+
+const ResultsList = (props: ResultsListProps) => {
+  // static defaultProps = {
+  //   films: []
+  // };
   const { films, setSearchFilmId } = props;
   const getItems = () =>
     films.map(film => (
@@ -25,23 +32,27 @@ const ResultsList = props => {
       </Link>
     ));
 
-  if (films.length) {
-    return <div className="searchResults__content container">{getItems()}</div>;
+  render() {
+    if (films.length) {
+      return <div className="searchResults__content container">{getItems()}</div>;
+    }
+    return (
+      <div className="searchResults__content container">
+        <span className="searchResults__message">No films found</span>
+      </div>
+    );
+
   }
-  return (
-    <div className="searchResults__content container">
-      <span className="searchResults__message">No films found</span>
-    </div>
-  );
+
 };
 
-ResultsList.propTypes = {
-  films: PropTypes.array.isRequired,
-  setSearchFilmId: PropTypes.func.isRequired
-};
+// ResultsList.propTypes = {
+//   films: PropTypes.array.isRequired,
+//   setSearchFilmId: PropTypes.func.isRequired
+// };
 
-ResultsList.defaultProps = {
-  films: []
-};
+// ResultsList.defaultProps = {
+//   films: []
+// };
 
 export default ResultsList;
