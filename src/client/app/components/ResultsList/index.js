@@ -32,18 +32,14 @@ const ResultsList = (props: ResultsListProps) => {
       </Link>
     ));
 
-  render() {
-    if (films.length) {
-      return <div className="searchResults__content container">{getItems()}</div>;
-    }
-    return (
-      <div className="searchResults__content container">
-        <span className="searchResults__message">No films found</span>
-      </div>
-    );
-
+  if (films.length) {
+    return <div className="searchResults__content container">{getItems()}</div>;
   }
-
+  return (
+    <div className="searchResults__content container">
+      <span className="searchResults__message">No films found</span>
+    </div>
+  );
 };
 
 // ResultsList.propTypes = {
