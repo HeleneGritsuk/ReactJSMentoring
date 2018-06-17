@@ -5,13 +5,10 @@ import "./style.css";
 
 type ResultsListProps = {
   films: Array<Object>,
-  setSearchFilmId: Function
+  setSearchFilmId: (id: Number, genres: Array<String>) => Function
 };
 
 const ResultsList = (props: ResultsListProps) => {
-  // static defaultProps = {
-  //   films: []
-  // };
   const { films, setSearchFilmId } = props;
   const getItems = () =>
     films.map(film => (
@@ -42,13 +39,8 @@ const ResultsList = (props: ResultsListProps) => {
   );
 };
 
-// ResultsList.propTypes = {
-//   films: PropTypes.array.isRequired,
-//   setSearchFilmId: PropTypes.func.isRequired
-// };
-
-// ResultsList.defaultProps = {
-//   films: []
-// };
+ResultsList.defaultProps = {
+  films: []
+};
 
 export default ResultsList;
