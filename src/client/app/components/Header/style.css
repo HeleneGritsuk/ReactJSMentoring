@@ -15,4 +15,5 @@ header h1 {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid #CCC;
 }
