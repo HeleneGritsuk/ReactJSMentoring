@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SortButton from "./SortButton.jsx";
+import "../styles/SearchResultsHeader.css";
 
 const SearchResultsHeader = props => {
   const { resultsNumber, sortBtnClick, sortType } = props;

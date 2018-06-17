@@ -6,3 +6,13 @@ header {
 header h1 {
   color: #ff8178;
 }
+
+.homeBtn {
+  margin-left: auto;
+  margin-left: auto;
+  background: white;
+  color: #ff8178;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}

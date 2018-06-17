@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../../components/Header";
 import SearchFilterButton from "../containers/SearchFilterButton.jsx";
 import SearchFilmButton from "../containers/SearchFilmButton.jsx";
+import "../styles/SearchPageHeader.css";
 
 class SearchPageHeader extends React.Component {
   constructor(props) {
