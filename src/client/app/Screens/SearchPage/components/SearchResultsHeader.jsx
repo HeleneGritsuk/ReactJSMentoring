@@ -1,7 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import SortButton from "./SortButton.jsx";
 import "../styles/SearchResultsHeader.css";
+
+const SearchResultsSorting = styled.div`
+  margin-left: auto;
+`;
 
 const SearchResultsHeader = props => {
   const { resultsNumber, sortBtnClick, sortType } = props;
@@ -12,7 +17,7 @@ const SearchResultsHeader = props => {
           <div className="searchResults__foundNumber">
             {resultsNumber} movies found
           </div>
-          <div className="searchResults__sorting">
+          <SearchResultsSorting>
             Sort by
             <SortButton
               sort="release_date"
@@ -28,7 +33,7 @@ const SearchResultsHeader = props => {
             >
               rating
             </SortButton>
-          </div>
+          </SearchResultsSorting>
         </div>
       )}
     </div>

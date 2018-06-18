@@ -1,8 +1,37 @@
 import React from "react";
+import styled from "styled-components";
 import Header from "../../../components/Header";
 import SearchFilterButton from "../containers/SearchFilterButton.jsx";
 import SearchFilmButton from "../containers/SearchFilmButton.jsx";
 import "../styles/SearchPageHeader.css";
+
+const SearchFormFooter = styled.div`
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+`;
+
+const SearchForm = styled.div`
+  text-transform: uppercase;
+  font-family: "Arial";
+`;
+
+// const SearchBtn = styled(SearchFilmButton)`
+//   background: #757373;
+//   box-shadow: none;
+//   border: none;
+//   padding: 5px 15px;
+//   text-transform: uppercase;
+//   color: white;
+//   font-weight: bold;
+//   cursor: pointer;
+//   margin-left: auto;
+//   border-radius: 6px;
+// `;
+
+const SearchFormInput = styled.input`
+  margin-bottom: 30px;
+`;
 
 class SearchPageHeader extends React.Component {
   constructor(props) {
@@ -15,15 +44,15 @@ class SearchPageHeader extends React.Component {
       <div className="pageHeader">
         <div className="container">
           <Header />
-          <div className="searchForm">
+          <SearchForm>
             <h3>Find your movie</h3>
             <input
-              type="text"
               className="searchForm__input"
+              type="text"
               ref={this.textInput}
             />
-            <div className="searchForm__footer">
-              <div className="searchForm__searchCriteria">
+            <SearchFormFooter>
+              <div>
                 <span>Search by</span>
                 <SearchFilterButton filter="title">Title</SearchFilterButton>
                 <SearchFilterButton filter="genres">Genre</SearchFilterButton>
@@ -34,8 +63,8 @@ class SearchPageHeader extends React.Component {
               >
                 Search
               </SearchFilmButton>
-            </div>
-          </div>
+            </SearchFormFooter>
+          </SearchForm>
         </div>
       </div>
     );
