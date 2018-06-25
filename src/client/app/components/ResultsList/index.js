@@ -20,24 +20,27 @@ const FilmInfo = styled.div`
 const FilmYear = styled.div`
   margin-left: auto;
 `;
-const FilmItem = styled(Link)`
-  margin: 0 1.1% 35px;
-  width: 31%;
-  text-decoration: none;
-  color: #000;
-`;
-
-const FilmItemYearSpan = styled.span`
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  line-height: 23px;
-`;
 
 const FilmImg = styled.img`
   width: 100%;
   height: auto;
   border-radius: 6px;
+`;
+
+const FilmItem = styled(Link)`
+  margin: 0 1.1% 35px;
+  width: 31%;
+  text-decoration: none;
+  color: #000;
+  &:hover ${FilmImg} {
+    box-shadow: 7px 8px 11px 1px rgba(0, 0, 0, 0.16);
+  }
+`;
+const FilmItemYearSpan = styled.span`
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 23px;
 `;
 
 const FilmTitle = styled.div`

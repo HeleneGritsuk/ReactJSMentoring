@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "../../../components/Header";
 import SearchFilterButton from "../containers/SearchFilterButton.jsx";
 import SearchFilmButton from "../containers/SearchFilmButton.jsx";
-import "../styles/SearchPageHeader.css";
 
 const SearchFormFooter = styled.div`
   display: flex;
@@ -16,20 +15,7 @@ const SearchForm = styled.div`
   font-family: "Arial";
 `;
 
-// const SearchBtn = styled(SearchFilmButton)`
-//   background: #757373;
-//   box-shadow: none;
-//   border: none;
-//   padding: 5px 15px;
-//   text-transform: uppercase;
-//   color: white;
-//   font-weight: bold;
-//   cursor: pointer;
-//   margin-left: auto;
-//   border-radius: 6px;
-// `;
-
-const SearchFormInput = styled.input`
+const StyledSearchInput = styled.input`
   margin-bottom: 30px;
 `;
 
@@ -46,10 +32,10 @@ class SearchPageHeader extends React.Component {
           <Header />
           <SearchForm>
             <h3>Find your movie</h3>
-            <input
+            <StyledSearchInput
               className="searchForm__input"
               type="text"
-              ref={this.textInput}
+              innerRef={this.textInput}
             />
             <SearchFormFooter>
               <div>
@@ -57,10 +43,7 @@ class SearchPageHeader extends React.Component {
                 <SearchFilterButton filter="title">Title</SearchFilterButton>
                 <SearchFilterButton filter="genres">Genre</SearchFilterButton>
               </div>
-              <SearchFilmButton
-                className="searchForm__searchBtn"
-                inputRef={this.textInput}
-              >
+              <SearchFilmButton inputRef={this.textInput}>
                 Search
               </SearchFilmButton>
             </SearchFormFooter>

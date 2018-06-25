@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import SortButton from "./SortButton.jsx";
-import "../styles/SearchResultsHeader.css";
 
 const SearchResultsSorting = styled.div`
   margin-left: auto;

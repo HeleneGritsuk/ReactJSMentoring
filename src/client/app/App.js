@@ -6,6 +6,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import SearchScreen from "./Screens/SearchPage";
 import FilmScreen from "./Screens/FilmScreen";
 import NotFoundScreen from "./Screens/404";
+
 import "./style.css";
 
 const App = ({ Router, location, context, store }) => (
@@ -20,7 +21,6 @@ const App = ({ Router, location, context, store }) => (
     </Router>
   </Provider>
 );
-
 
 App.propTypes = {
   Router: PropTypes.func.isRequired,
