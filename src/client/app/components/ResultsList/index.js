@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import "./style.css";
 
 const Message = styled.span`
   position: absolute;
@@ -53,6 +52,13 @@ const FilmGenre = styled.div`
   color: #666;
 `;
 
+const StyledSearchResultsContent = styled.div`
+  display: flex;
+  padding: 40px 0;
+  position: relative;
+  flex-wrap: wrap;
+`;
+
 type ResultsListProps = {
   films: Array<Object>,
   setSearchFilmId: (id: Number, genres: Array<String>) => Function
@@ -81,12 +87,16 @@ const ResultsList = (props: ResultsListProps) => {
     ));
 
   if (films.length) {
-    return <div className="searchResults__content container">{getItems()}</div>;
+    return (
+      <StyledSearchResultsContent className="container">
+        {getItems()}
+      </StyledSearchResultsContent>
+    );
   }
   return (
-    <div className="searchResults__content container">
+    <StyledSearchResultsContent className="container">
       <Message>No films found</Message>
-    </div>
+    </StyledSearchResultsContent>
   );
 };
 
