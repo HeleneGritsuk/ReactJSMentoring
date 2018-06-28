@@ -1,24 +1,24 @@
 const filmsMockArray = [
   {
-    name: "Kill Bill",
-    imgSrc:
+    title: "Kill Bill",
+    poster_path:
       "http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg",
-    genre: "drama",
-    year: 2014,
-    id: 1
+    release_date: 2014,
+    id: 1,
+    genres: ["Action", "Adventure", "Comedy"]
   },
   {
-    name: "Kill Bill2",
-    imgSrc:
-      "http://www.imfdb.org/images/thumb/6/65/Killbillposter.jpg/300px-Killbillposter.jpg",
-    genre: "adventure",
-    year: 2017,
-    id: 2
+    title: "The Wolf of Wall Street",
+    poster_path:
+      "https://image.tmdb.org/t/p/w500/vK1o5rZGqxyovfIhZyMELhk03wO.jpg",
+    release_date: "2013-12-25",
+    id: 2,
+    genres: ["Crime", "Drama", "Comedy"]
   }
 ];
 const filmMock = {
   budget: 104000000,
-  genres: (3)[("Action", "Adventure", "Comedy")],
+  genres: ["Action", "Adventure", "Comedy"],
   id: 343668,
   overview:
     "When an attack on the Kingsman headquarters takes place and a new villain rises, Eggsy and Merlin are forced to work together with the American agency known as the Statesman to save the world.",

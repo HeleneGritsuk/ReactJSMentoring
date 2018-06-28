@@ -1,19 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledSortBtn = styled.button`
+  color: ${props => (props.active ? "#ce5a35" : "#484747")};
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #484747;
+  cursor: pointer;
+`;
 
 const SortButton = props => {
   const { sort, sortType, sortBtnClick, children } = props;
   return (
-    <button
+    <StyledSortBtn
       onClick={sortBtnClick.bind(null, sort)}
-      className={
-        sort === sortType
-          ? "active searchResults__sortBtn"
-          : "searchResults__sortBtn"
-      }
+      active={sort === sortType && true}
     >
       {children}
-      </button>
+    </StyledSortBtn>
   );
 };
 
@@ -23,5 +30,7 @@ SortButton.propTypes = {
   sortBtnClick: PropTypes.func.isRequired,
   children: PropTypes.any
 };
-
+SortButton.defaultProps = {
+  sortType: "release_date"
+};
 export default SortButton;

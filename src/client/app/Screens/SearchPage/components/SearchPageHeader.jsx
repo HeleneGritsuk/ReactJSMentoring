@@ -1,7 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 import Header from "../../../components/Header";
 import SearchFilterButton from "../containers/SearchFilterButton.jsx";
 import SearchFilmButton from "../containers/SearchFilmButton.jsx";
+
+const SearchFormFooter = styled.div`
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+`;
+
+const SearchForm = styled.div`
+  text-transform: uppercase;
+  font-family: "Arial";
+`;
+
+const StyledSearchInput = styled.input`
+  margin-bottom: 30px;
+`;
 
 class SearchPageHeader extends React.Component {
   constructor(props) {
@@ -14,27 +30,24 @@ class SearchPageHeader extends React.Component {
       <div className="pageHeader">
         <div className="container">
           <Header />
-          <div className="searchForm">
+          <SearchForm>
             <h3>Find your movie</h3>
-            <input
-              type="text"
+            <StyledSearchInput
               className="searchForm__input"
-              ref={this.textInput}
-          />
-            <div className="searchForm__footer">
-              <div className="searchForm__searchCriteria">
+              type="text"
+              innerRef={this.textInput}
+            />
+            <SearchFormFooter>
+              <div>
                 <span>Search by</span>
-                            <SearchFilterButton filter="title">Title</SearchFilterButton>
+                <SearchFilterButton filter="title">Title</SearchFilterButton>
                 <SearchFilterButton filter="genres">Genre</SearchFilterButton>
-                        </div>
-              <SearchFilmButton
-                className="searchForm__searchBtn"
-                inputRef={this.textInput}
-              >
+              </div>
+              <SearchFilmButton inputRef={this.textInput}>
                 Search
               </SearchFilmButton>
-            </div>
-          </div>
+            </SearchFormFooter>
+          </SearchForm>
         </div>
       </div>
     );
